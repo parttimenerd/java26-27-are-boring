@@ -18,13 +18,14 @@ mdc: true
 import { onMounted, onUnmounted } from 'vue'
 
 const boringFeatureEnabled = import.meta.env.VITE_BORING_ENABLED === 'true'
-const boringSoundManifestUrl = '/sounds/manifest.json'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const boringSoundManifestUrl = `${base}/sounds/manifest.json`
 const fallbackBoringSounds = [
-  '/sounds/quebec.opus',
-  '/sounds/quebec1.opus',
-  '/sounds/boring-1.wav',
-  '/sounds/boring-2.wav',
-  '/sounds/boring-3.wav'
+  `${base}/sounds/quebec.opus`,
+  `${base}/sounds/quebec1.opus`,
+  `${base}/sounds/boring-1.wav`,
+  `${base}/sounds/boring-2.wav`,
+  `${base}/sounds/boring-3.wav`
 ]
 const boringManifestRefreshMs = 15000
 let currentBoringSounds = [...fallbackBoringSounds]
