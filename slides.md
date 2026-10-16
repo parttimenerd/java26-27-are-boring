@@ -2997,7 +2997,7 @@ J: "That's the goal. Benchmarks show 65–80% faster startup. And by iteration 4
 layout: center
 ---
 
-<img src="/images/wiki-valhalla.jpg" class="slide-bg opacity-100" style="object-position: center 30%;" />
+<img src="./img/wiki-valhalla.jpg" class="slide-bg opacity-100" style="object-position: center 30%;" />
 <div class="slide-overlay" />
 <div class="slide-content flex flex-col items-center justify-center h-full">
 
