@@ -1,7 +1,7 @@
-Java 26 is boring (talk)
+Java 26 and 27 are boring and this is a good thing (talk)
 ========================
 
-[![Slidev Build](https://github.com/parttimenerd/java26-is-boring/actions/workflows/slidev-build.yml/badge.svg)](https://github.com/parttimenerd/java26-is-boring/actions/workflows/slidev-build.yml)
+[![Slidev Build](https://github.com/parttimenerd/java26-27-are-boring/actions/workflows/slidev-build.yml/badge.svg)](https://github.com/parttimenerd/java26-27-are-boring/actions/workflows/slidev-build.yml)
 
 Build the slides:
 
@@ -9,11 +9,11 @@ Build the slides:
 slides/launch.sh
 ```
 
-Or view them online: https://parttimenerd.github.io/java26-is-boring
+Or view them online: https://parttimenerd.github.io/java26-27-are-boring
 
 Speakers
 --------
-- [Lutske de Leeuw](httpsgithub.com/Lutske)
+- [Lutske van der Meer](httpsgithub.com/Lutske)
 - [Johannes Bechberger](https://mostlynerdless.de)
 
 Resources
@@ -32,6 +32,7 @@ Resources
 - **InfoQ Trends:** [https://www.infoq.com/articles/java-trends-report-2025/](https://www.infoq.com/articles/java-trends-report-2025/) — InfoQ Java Trends Report 2025: AI on the JVM, modernization, Jakarta EE, Project Leyden progress, and ecosystem shifts.
 - **Outdated Java:** [https://foojay.io/today/how-organizations-became-stuck-on-outdated-java-versions/](https://foojay.io/today/how-organizations-became-stuck-on-outdated-java-versions/) — Foojay article on why organizations stay on old Java versions (cost, management, compatibility) and how to move forward.
 - **AI Bores:** [https://www.marginalia.nu/log/a_132_ai_bores/](https://www.marginalia.nu/log/a_132_ai_bores/) — Short essay critiquing how AI tooling can make projects and discourse more derivative and less original.
+- **Java 27 Is Only Boring on the Surface:** [https://mostlynerdless.de/blog/2026/09/15/java-27-is-only-boring-on-the-surface/](https://mostlynerdless.de/blog/2026/09/15/java-27-is-only-boring-on-the-surface/)
 
 
 License

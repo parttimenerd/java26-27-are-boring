@@ -1,13 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Find image files under slides/img that are not referenced in any slides sources.
+# Find image files under img/ that are not referenced in source files.
 # Usage: cleanup-unused-images.sh [--delete]
-# Default: dry-run (lists unused files). With --delete moves files to slides/.unused-images-<ts>/
+# Default: dry-run (lists unused files). With --delete moves files to .unused-images-<ts>/
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 IMG_DIR="$ROOT_DIR/img"
 SEARCH_DIR="$ROOT_DIR"
+SOURCE_GLOBS=(
+  "--include=*.md"
+  "--include=*.vue"
+  "--include=*.ts"
+  "--include=*.js"
+  "--include=*.mjs"
+  "--include=*.html"
+  "--include=*.json"
+)
 
 DELETE=false
 if [[ ${1-} == "--delete" ]]; then
@@ -34,8 +43,13 @@ unused=()
 
 for img in "${images[@]}"; do
   base=$(basename "$img")
-  # search for basename or path fragment (img/...) in files under slides
-  if ! grep -R --line-number --binary-files=without-match -F --exclude-dir=node_modules -e "$base" "$SEARCH_DIR" >/dev/null 2>&1; then
+  if ! grep -R --line-number --binary-files=without-match -F \
+    --exclude-dir=node_modules \
+    --exclude-dir=dist \
+    --exclude-dir=.git \
+    --exclude-dir='.unused-images-*' \
+    "${SOURCE_GLOBS[@]}" \
+    -e "$base" "$SEARCH_DIR" >/dev/null 2>&1; then
     unused+=("$img")
   fi
 done

@@ -1,6 +1,4 @@
-import { defineShikiSetup } from '@slidev/types'
-
-export default defineShikiSetup(() => {
+export default () => {
   return {
     themes: {
       dark: 'dracula',
@@ -14,4 +12,4 @@ export default defineShikiSetup(() => {
       'python',
     ],
   }
-})
+}

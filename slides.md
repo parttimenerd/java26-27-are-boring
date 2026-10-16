@@ -5,115 +5,14 @@ class: text-center
 highlighter: shiki
 lineNumbers: false
 info: |
-  Java 26 is boring — and that's brilliant.
-  A talk by Lutske de Leeuw and Johannes Bechberger
+  Java 26 and 27 are boring and this is a good thing.
+  A talk by Lutske van der Meer and Johannes Bechberger
 drawings:
   persist: false
 transition: slide-left
-title: Java 26 is boring
+title: Java 26 and 27 are boring and this is a good thing
 mdc: true
 ---
-
-<style>
-:root {
-  --code-font-size: 1.1rem;
-  --code-font-size-px: 14px; /* Main code font size - override in script above */
-  --code-line-height: 1.6;
-  --code-border: rgba(226, 232, 240, 0.15);
-}
-
-.slidev-slide pre,
-.slidev-slide .shiki {
-  font-size: var(--code-font-size);
-  line-height: var(--code-line-height);
-  border: 1px solid var(--code-border);
-  border-radius: 12px;
-  padding: 20px 24px;
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.3);
-}
-.slidev-layout pre, .slidev-layout code {
-    -webkit-user-select: text;
-    user-select: text;
-    font-size: 1.05em !important;
-    white-space: pre-wrap;
-}
-
-/* Boost readability of gray utility text on dark backgrounds */
-.slidev-page .text-gray-300 { color: #f1f5f9 !important; }
-.slidev-page .text-gray-400 { color: #e2e8f0 !important; }
-.slidev-page .text-gray-500 { color: #cbd5e1 !important; }
-
-/* Smaller code for side-by-side layouts */
-.compact-code pre, .compact-code .shiki {
-  font-size: 0.85rem !important;
-  line-height: 1.4 !important;
-  padding: 12px 14px !important;
-}
-
-/* Large centered quote styling */
-.quote-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 7rem 4rem;
-  position: relative;
-}
-.quote-slide::before {
-  content: '"';
-  position: absolute;
-  left: 40px;
-  top: 40%;
-  transform: translateY(-50%);
-  font-size: 15rem;
-  font-weight: 900;
-  color: rgba(148, 113, 217, 0.15);
-  line-height: 1;
-  z-index: 0;
-  font-family: cursive;
-}
-.quote-text {
-  font-size: 1.85rem;
-  line-height: 1.7;
-  font-style: italic;
-  color: #f8fafc;
-  max-width: 820px;
-  font-weight: 500;
-  position: relative;
-  z-index: 1;
-}
-
-.quote-attr {
-  font-size: 1.05rem;
-  color: #e2e8f0;
-  margin-top: 1.5rem;
-  font-weight: 500;
-}
-
-/* Big statement */
-.big-statement p {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.3;
-  text-align: center;
-  color: #f8fafc;
-  justify-content: center;
-  min-height: 100px;
-}
-
-div.polaroid {
-  width: 80%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
-}
-
-div.container {
-  text-align: center;
-  padding: 10px 20px;
-}
-</style>
 
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
@@ -466,15 +365,16 @@ onUnmounted(() => {
 })
 </script>
 
-<div class="absolute inset-0 bg-black/55 z-0" />
+
+
 
 <div class="relative z-10 flex flex-col items-center justify-center h-full">
 
-<div class="text-6xl font-bold leading-tight">Java 26 is boring</div>
-<div class="text-3xl mt-4 text-emerald-400 font-semibold">Which is why it is brilliant</div>
+<div class="text-6xl font-bold leading-tight">Java 26 and 27 are boring</div>
+<div class="text-3xl mt-4 text-emerald-400 font-semibold">and this is a good thing</div>
 
 <div class="mt-12 text-xl text-gray-500">
-Lutske de Leeuw &nbsp;&nbsp;·&nbsp;&nbsp; Johannes Bechberger
+Lutske van der Meer &nbsp;&nbsp;·&nbsp;&nbsp; Johannes Bechberger
 </div>
 
 <div class="mt-4 text-lg text-gray-400">Voxxed Days Amsterdam 2026</div>
@@ -488,6 +388,9 @@ L: Welcome
 ---
 layout: center
 ---
+
+
+<div class="relative z-10">
 
 # Boring.
 
@@ -506,6 +409,8 @@ Your code still compiles. Your APIs still work.<br/>Your upgrade is not a rewrit
 </div>
 
 </v-click>
+
+</div>
 
 <!--
 L: "When people hear 'boring tech,' they think old, slow, or not innovative."
@@ -560,7 +465,9 @@ J:
 layout: center
 ---
 
-<div class="big-statement">
+<div class="relative z-10">
+
+<div class="big-statement text-5xl">
 
 What Java version are you on?
 
@@ -568,6 +475,8 @@ What Java version are you on?
 
 <div class="text-xl text-gray-400 mt-8">
 
+
+</div>
 
 </div>
 
@@ -579,9 +488,11 @@ L: "Quick show of hands. Who' on Java 28? Liars, it's not out there Who's on 26,
 layout: center
 ---
 
+<div class="relative z-10">
+
 <div class="big-statement">
 
-Many platforms try to impress you<br/>with <OrangeText>✨shiny rewrites✨</OrangeText> and <RedText> breaking changes 🚨</RedText>
+Many platforms try to impress you with <OrangeText>✨shiny rewrites✨</OrangeText>and <RedText> breaking changes 🚨</RedText>
 
 </div>
 
@@ -595,6 +506,8 @@ Java took another path. Java optimizes for <OrangeText>trust</OrangeText>.
 
 </v-click>
 
+</div>
+
 <!--
 L: "Most platforms chase shiny new syntax. Java optimizes for something rarer: trust."
 [click]
@@ -604,6 +517,9 @@ L: "Most platforms chase shiny new syntax. Java optimizes for something rarer: t
 ---
 layout: center
 ---
+
+
+<div class="relative z-10">
 
 <div class="big-statement">
 
@@ -627,6 +543,8 @@ Boring by design, since 1995
 
 <div class="text-sm text-gray-500 mt-6"> The five original design goals, Java Language Specification, 1995</div>
 
+</div>
+
 <!--
 all Johannes:
 
@@ -643,6 +561,9 @@ If you didn't know it, Java had five original design goals, set out in 1995:
 ---
 layout: center
 ---
+
+
+<div class="relative z-10">
 
 <div class="big-statement">
 
@@ -674,6 +595,8 @@ java { toolchain { languageVersion = JavaLanguageVersion.of(26) } }
 That's it. Seriously.
 </div>
 
+</div>
+
 <!--
 L: "Upgrading is embarrassingly simple: one property in your pom or toolchain config. Backward compatibility means most apps compile and run without code changes. No rewrite, no migration guide — just bump the number. Boring and brilliant."
 -->
@@ -681,6 +604,9 @@ L: "Upgrading is embarrassingly simple: one property in your pom or toolchain co
 ---
 layout: center
 ---
+
+
+<div class="relative z-10">
 
 <div class="big-statement">
 
@@ -702,6 +628,8 @@ The only new syntax:
 
 </v-click>
 
+</div>
+
 <!--
 all Johannes:
 
@@ -718,9 +646,14 @@ One could argue most Java releases after Java 8 are boring
 layout: center
 ---
 
+
+<div class="relative z-10">
+
 <div class="big-statement">
 
 The ecosystem is the <OrangeText>real</OrangeText> innovator.
+
+</div>
 
 </div>
 
@@ -742,53 +675,17 @@ Key message
 - Ecosystem = the real innovator 🚀
 -->
 
----
-layout: image-left
-image: ./img/Duke_quizmaster.png
----
-
-# How Old Is Your Code?
-
-
-Guess the Java version!
-
-<div class="text-xl text-orange-400 mt-6 font-mono">
-
-mostlynerdless.de/java-game/
-
-</div>
-
-<div class="text-lg text-gray-400 mt-6">
-
-Phones out. Highest score wins our eternal respect and a t-shirt.
-</div>
-
-<!--
-Lutske: Johannes had some free time 
-Johannes: switches the monitor
-
-
-L: "Alright, enough setup. Let's have some fun."
-"Time to find out how well you really know your Java history."
--->
-
-<!--
-[SWITCH TO BROWSER — run the quiz for approximately 10 minutes]
-
-J: runs the game, reads the code snippets aloud, gives hints
-L: "provides color commentary and reacts to audience guesses"
-
-"Alright, let's see the final scores!"
-J: "Congratulations to our winner! You officially know your Java history."
--->
-
----
 layout: center
 ---
+
+
+<div class="relative z-10">
 
 <div class="big-statement">
 
 Your code was already <span class="text-emerald">boring</span>.
+
+</div>
 
 </div>
 
@@ -938,11 +835,16 @@ L: "And modules were... controversial."
 layout: center
 ---
 
+
+<div class="relative z-10">
+
 <div class="quote-slide">
   <div class="quote-text">
     "Modules: Enormous upheaval<br/> for minimal concrete benefit."
   </div>
   <div class="quote-attr">— Neil Madden, rating 26 years of Java changes</div>
+</div>
+
 </div>
 
 <!--
@@ -1088,13 +990,13 @@ L: Oracle switched to a time-based cadence in 2017: a release every 6months. Mar
 
 # After 2022: The Train Keeps Moving
 
-<svg viewBox="-30 0 1060 420" class="w-full" style="font-size: 1px;">
-  <!-- Timeline: Java 18 (2022) → Java 26 (2026) -->
+<svg viewBox="-30 0 1180 420" class="w-full" style="font-size: 1px;">
+  <!-- Timeline: Java 18 (2022) → Java 27 (2026) -->
   <!-- Equal spacing -->
-  <!-- X positions: J18→60 J19→170 J20→280 J21→390 J22→500 J23→610 J24→720 J25→830 J26→940 -->
+  <!-- X positions: J18→60 J19→170 J20→280 J21→390 J22→500 J23→610 J24→720 J25→830 J26→940 J27→1050 -->
 
   <!-- Main horizontal timeline line -->
-  <line x1="30" y1="210" x2="970" y2="210" stroke="#555" stroke-width="2" />
+  <line x1="30" y1="210" x2="1080" y2="210" stroke="#555" stroke-width="2" />
 
   <!-- === Java 18 (2022) — TOP === -->
   <g>
@@ -1211,6 +1113,19 @@ L: Oracle switched to a time-based cadence in 2017: a release every 6months. Mar
     <text x="940" y="120" text-anchor="middle" style="font-size: 18px;" fill="white">March 2026</text>
     <line x1="870" y1="96" x2="1010" y2="96" stroke="#3f51b5" stroke-width="2" />
   </g>
+
+  <!-- === Java 27 (2026) — TOP === -->
+  <g v-click>
+    <line x1="954" y1="210" x2="1036" y2="210" stroke="#8bc34a" stroke-width="5" opacity="0.5" />
+    <circle cx="1050" cy="210" r="14" fill="none" stroke="#666" stroke-width="1.2" />
+    <circle cx="1050" cy="210" r="9" fill="none" stroke="#666" stroke-width="0.8" />
+    <circle cx="1050" cy="210" r="4" fill="#8bc34a" />
+    <line x1="1050" y1="196" x2="1050" y2="130" stroke="#8bc34a" stroke-width="1.2" />
+    <circle cx="1050" cy="130" r="2.5" fill="#8bc34a" />
+    <text x="1050" y="243" text-anchor="middle" style="font-size: 26px; font-weight: bold;" fill="#8bc34a">Java 27</text>
+    <text x="1050" y="120" text-anchor="middle" style="font-size: 18px;" fill="white">Sep 2026</text>
+    <line x1="980" y1="96" x2="1120" y2="96" stroke="#8bc34a" stroke-width="2" />
+  </g>
 </svg>
 
 <!--
@@ -1234,61 +1149,78 @@ Mark Reinhold captured the goal: stay competitive while protecting compatibility
 
 ---
 
-# Java 26: What's inside
+# Java 26 + 27: What shipped as Final
 
-<div class="mt-0 text-base leading-relaxed">
+<div class="mt-2 text-sm">
 
-<style>
-td {
-  padding: 3px;
-}
-th {
-  font-weight: bold;
-}
-</style>
-
-| JEP | Feature | |
-|-----|---------|---|
-| 500 | Prepare to Make Final Mean Final | <Badge variant="green">Final</Badge> |
-| 504 | Remove the Applet API | <Badge variant="green">Final</Badge> |
-| 516 | Ahead-of-Time Object Caching with Any GC | <Badge variant="green">Final</Badge> |
-| 517 | HTTP/3 for the HTTP Client API | <Badge variant="green">Final</Badge> |
-| 522 | G1 GC: Improve Throughput | <Badge variant="green">Final</Badge> |
-| 524 | PEM Encodings of Cryptographic Objects | <Badge variant="blue">2nd Preview</Badge> |
-| 525 | Structured Concurrency | <Badge variant="blue">6th Preview</Badge> |
-| 526 | Lazy Constants | <Badge variant="blue">2nd Preview</Badge> |
-| 529 | Vector API | <Badge variant="gray">11th Incubator</Badge> |
-| 530 | Primitive Types in Patterns | <Badge variant="blue">4th Preview</Badge> |
+| JEP | Feature | Version |
+|-----|---------|---------|
+| 500 | Prepare to Make Final Mean Final | <Badge26/> |
+| 504 | Remove the Applet API | <Badge26/> |
+| 516 | Ahead-of-Time Object Caching with Any GC | <Badge26/> |
+| 517 | HTTP/3 for the HTTP Client API | <Badge26/> |
+| 522 | G1 GC: Improve Throughput | <Badge26/> |
+| 523 | G1 GC: Now Default on All Systems | <Badge27/> |
+| 534 | Compact Object Headers: Now Default | <Badge27/> |
+| 536 | JFR In-Process Data Redaction | <Badge27/> |
+| 524/538 | PEM Encodings of Cryptographic Objects | <Badge variant="teal">26+27</Badge> |
+| 527 | Post-Quantum Hybrid Key Exchange for TLS 1.3 | <Badge27/> |
 
 </div>
 
 <!--
-Lutske: 
-Here’s the full list. Ten JEPs.
-Don’t worry, this is just a quick overview, we’ll zoom in later.
+Lutske:
+Here’s what shipped as final across Java 26 and 27.
+Five finals in Java 26. Java 27 adds G1 as universal default, compact headers as default, JFR redaction, and post-quantum TLS.
+-->
 
-Five are final.
-Done. Production-ready. You can upgrade and start using them.
+---
 
-Four are in preview.
-So yes, you’ll need --enable-preview if you want to try them out.
+# Java 26 + 27: Preview & Incubating
 
-And one… is incubating.
-The Vector API. On its eleventh round.
+<div class="mt-2 text-sm">
 
-Eleven.
+| JEP | Feature | Status | Version |
+|-----|---------|--------|---------|
+| 525/533 | Structured Concurrency | <Badge variant="blue">6th → 7th Preview</Badge> | <Badge variant="teal">26+27</Badge> |
+| 526/531 | Lazy Constants | <Badge variant="blue">2nd → 3rd Preview</Badge> | <Badge variant="teal">26+27</Badge> |
+| 529/537 | Vector API | <Badge variant="gray">11th → 12th Incubator</Badge> | <Badge variant="teal">26+27</Badge> |
+| 530/532 | Primitive Types in Patterns | <Badge variant="blue">4th → 5th Preview</Badge> | <Badge variant="teal">26+27</Badge> |
 
-We’ll come back to that one.
+</div>
 
-Individually, none of these are big headline features.
-But together? They make Java faster, cleaner, and just more pleasant to work with.
+<!--
+Johannes:
+The preview features all advanced — same pattern across both releases.
+We’ll dig into each of these.
+-->
 
-Let’s dig into the ones that actually matter.
+---
+
+# Java 26 + 27: Cryptography
+
+<div class="mt-2 text-sm">
+
+| JEP | Feature | Status | Version |
+|-----|---------|--------|---------|
+| 524 | PEM Encodings of Cryptographic Objects | <Badge variant="blue">2nd Preview</Badge> | <Badge26/> |
+| 527 | Post-Quantum Hybrid Key Exchange for TLS 1.3 | <Badge variant="green">Final</Badge> | <Badge27/> |
+| 538 | PEM Encodings of Cryptographic Objects | <Badge variant="blue">3rd Preview</Badge> | <Badge27/> |
+
+</div>
+
+<!--
+Johannes:
+Two dedicated crypto JEPs, plus eight more under the surface.
+PEM encodings advancing toward final. Post-quantum TLS shipping in Java 27 by default — zero config needed.
 -->
 
 ---
 layout: center
 ---
+
+
+<div class="relative z-10">
 
 <div class="big-statement">
 
@@ -1299,6 +1231,8 @@ layout: center
 <div class="text-xl mt-8">
 
 JEP 500: Prepare to Make Final Mean Final
+
+</div>
 
 </div>
 
@@ -1376,9 +1310,14 @@ J: "And existing libraries are already adapting. This is how Java evolves: signa
 layout: section
 ---
 
+
+<div class="relative z-10">
+
 # The Invisible <br/> GC Upgrade
 
-JEP 522: G1 GC: Improve Throughput
+JEP 522 <Badge26/> · JEP 523 <Badge27/>
+
+</div>
 
 <!--
 Lutske:
@@ -1388,6 +1327,8 @@ Invisible improvements are my favorite: do nothing and your app gets faster. G1 
 ---
 layout: center
 ---
+
+<div class="relative z-10">
 
 <div class="text-8xl font-bold text-emerald-400">
 
@@ -1405,6 +1346,8 @@ more throughput. For free.
 
 </div>
 
+</div>
+
 <!--
 L: "JEP 522 reduces the synchronization between your application threads and G1's concurrent refinement threads."
 J: "In English?"
@@ -1419,6 +1362,8 @@ J: "The technical detail: G1 maintains a 'card table' that tracks which parts of
 layout: center
 ---
 
+<div class="relative z-10">
+
 <div class="big-statement">
 
 Zero lines of code changed. <br/>Just upgrade your JDK.
@@ -1428,6 +1373,8 @@ Zero lines of code changed. <br/>Just upgrade your JDK.
 <div class="text-3xl text-emerald mt-8 text-center">
 
 This is what boring looks like in practice.
+
+</div>
 
 </div>
 
@@ -1441,12 +1388,45 @@ L: "That's boring working exactly as intended."
 -->
 
 ---
+layout: center
+---
+
+<div class="relative z-10">
+
+<div class="big-statement">
+
+Java 27: G1 is now the default <br/> <span class="text-3xl">everywhere.</span>
+
+</div>
+
+<div class="text-xl text-gray-300 mt-8">
+
+**JEP 523** — Previously, Serial GC was chosen for single-CPU or memory-constrained systems.<br/>
+The JDK 26 throughput improvements made that distinction unnecessary.
+
+</div>
+
+</div>
+
+<!--
+J: "Java 27 takes this one step further. JEP 523 makes G1 the default GC on all systems — including single-CPU and low-memory containers."
+L: "Wait, Serial GC was still the default somewhere?"
+J: "Yes — Serial GC runs all GC work on a single thread, so on very constrained systems it had lower overhead. But after the JEP 522 improvements in Java 26, G1 got fast enough that the distinction no longer makes sense."
+L: "So Java 27 just… removes the exception."
+J: "Exactly. One fewer thing to think about."
+-->
+
+---
 layout: section
 ---
 
+<div class="relative z-10">
+
 # Ahead of time
 
-JEP 516: Ahead-of-Time Object Caching with Any GC
+JEP 516 <Badge26/>
+
+</div>
 
 <!--
 Johannes
@@ -1456,17 +1436,13 @@ Johannes
 
 # AOT Object Caching — now with Any GC
 
-<div class="mt-6 text-xl leading-relaxed">
-
-</div>
-
-<div class="mt-6">
+<div class="mt-4">
 
 ```shell
-# Training run: JVM records which objects are created at startup
+# Training run: JVM records startup objects
 java -XX:AOTCacheOutput=app.aot -jar myapp.jar
 
-# Production: JVM loads pre-built objects — faster startup
+# Production: loads pre-built objects instead
 java -XX:AOTCache=app.aot -jar myapp.jar
 ```
 
@@ -1474,10 +1450,19 @@ java -XX:AOTCache=app.aot -jar myapp.jar
 
 <v-click>
 
-<div class="text-2xl mt-5">Without any changes to your application.</div>
-
-<div class="text-5xl mt-5 text-emerald">
-Boring.
+<div class="mt-5 grid grid-cols-3 gap-4 text-center">
+  <div class="bg-zinc-800 rounded-lg p-3">
+    <div class="text-3xl font-bold text-emerald-400">~40%</div>
+    <div class="text-sm text-gray-400 mt-1">faster startup</div>
+  </div>
+  <div class="bg-zinc-800 rounded-lg p-3">
+    <div class="text-3xl font-bold text-emerald-400">~40%</div>
+    <div class="text-sm text-gray-400 mt-1">less startup memory</div>
+  </div>
+  <div class="bg-zinc-800 rounded-lg p-3">
+    <div class="text-3xl font-bold text-emerald-400">0</div>
+    <div class="text-sm text-gray-400 mt-1">lines of app code changed</div>
+  </div>
 </div>
 
 </v-click>
@@ -1487,21 +1472,23 @@ Johannes
 
 Lutske shouts in Boring
 
-Johannes: It's really it just works
-
-J: "AOT Object Caching is another invisible upgrade. Previously, this only worked with the default G1 collector. Now it works with any GC — ZGC, Shenandoah, Parallel, you name it."
-L: "So the app starts faster because Java remembers your app's startup work — and skips it next time. The JVM caches frequently created objects from a training run. On subsequent starts, it loads pre-built objects instead of creating them from scratch."
-J: "This is huge for microservices and containerized workloads where cold start time matters."
-L: "Faster cold starts, less memory churn at startup, and again — you don't change a single line of application code. Just add a JVM flag. Boring and brilliant, part two."
+J: "AOT Object Caching — the JVM remembers your startup work and skips it next time. Training run once, then load the cache in production."
+L: "40% faster startup, 40% less memory at startup. Zero application code changes."
+J: "Now works with any GC — ZGC, Shenandoah, Parallel. Previously G1 only."
 -->
 
 ---
 layout: section
 ---
 
+
+<div class="relative z-10">
+
 # HTTP/3 in the Standard Library
 
-JEP 517: HTTP/3 for the HTTP Client API
+JEP 517 <Badge26/>
+
+</div>
 
 <!--
 L: "Next up: HTTP/3 — the latest version of the web's protocol. It's built on QUIC over UDP with TLS 1.3 baked in. That means faster connection setup, no head-of-line blocking, and better behavior on unreliable networks."
@@ -1583,81 +1570,6 @@ layout: center
 
 </div>
 
-<style>
-@keyframes car-slow {
-  0% { left: -30px; }
-  45% { left: 30%; }
-  50% { left: 30%; }
-  95% { left: calc(100% - 30px); }
-  100% { left: calc(100% - 30px); }
-}
-@keyframes car-fast1 {
-  0% { left: -30px; }
-  100% { left: calc(100% - 30px); }
-}
-@keyframes car-fast2 {
-  0% { left: -30px; }
-  100% { left: calc(100% - 30px); }
-}
-@keyframes car-fast3 {
-  0% { left: -30px; }
-  100% { left: calc(100% - 30px); }
-}
-@keyframes plane1 {
-  0% { left: -40px; }
-  100% { left: calc(100% - 30px); }
-}
-@keyframes plane2 {
-  0% { left: -30px; }
-  100% { left: calc(100% - 25px); }
-}
-@keyframes plane3 {
-  0% { left: -35px; }
-  100% { left: calc(100% - 30px); }
-}
-@keyframes plane4 {
-  0% { left: -25px; }
-  100% { left: calc(100% - 20px); }
-}
-@keyframes plane5 {
-  0% { left: -30px; }
-  100% { left: calc(100% - 25px); }
-}
-@keyframes plane6 {
-  0% { left: -25px; }
-  100% { left: calc(100% - 20px); }
-}
-@keyframes plane7 {
-  0% { left: -40px; }
-  100% { left: calc(100% - 30px); }
-}
-@keyframes plane8 {
-  0% { left: -30px; }
-  100% { left: calc(100% - 25px); }
-}
-@keyframes plane9 {
-  0% { left: -35px; }
-  100% { left: calc(100% - 25px); }
-}
-@keyframes plane10 {
-  0% { left: -30px; }
-  100% { left: calc(100% - 20px); }
-}
-.animate-car-slow { position: absolute; animation: car-slow 4s ease-in-out infinite; top: -8px; transform: scaleX(-1); }
-.animate-car-fast1 { position: absolute; animation: car-fast1 2.2s linear infinite; top: -6px; transform: scaleX(-1); }
-.animate-car-fast2 { position: absolute; animation: car-fast2 2.6s linear infinite 0.4s; top: -6px; transform: scaleX(-1); }
-.animate-car-fast3 { position: absolute; animation: car-fast3 2s linear infinite 0.8s; top: -6px; transform: scaleX(-1); }
-.animate-plane1 { position: absolute; animation: plane1 1.8s linear infinite; top: 5%; transform: rotate(45deg); }
-.animate-plane2 { position: absolute; animation: plane2 2.1s linear infinite 0.3s; top: 20%; transform: rotate(45deg); }
-.animate-plane3 { position: absolute; animation: plane3 1.5s linear infinite 0.7s; top: 40%; transform: rotate(45deg); }
-.animate-plane4 { position: absolute; animation: plane4 2.4s linear infinite 0.1s; top: 55%; transform: rotate(45deg); }
-.animate-plane5 { position: absolute; animation: plane5 1.9s linear infinite 0.5s; top: 30%; transform: rotate(45deg); }
-.animate-plane6 { position: absolute; animation: plane6 1.7s linear infinite 0.2s; top: 12%; transform: rotate(45deg); }
-.animate-plane7 { position: absolute; animation: plane7 2.3s linear infinite 0.9s; top: 48%; transform: rotate(45deg); }
-.animate-plane8 { position: absolute; animation: plane8 1.6s linear infinite 1.1s; top: 65%; transform: rotate(45deg); }
-.animate-plane9 { position: absolute; animation: plane9 2.0s linear infinite 0.6s; top: 8%; transform: rotate(45deg); }
-.animate-plane10 { position: absolute; animation: plane10 1.4s linear infinite 1.3s; top: 38%; transform: rotate(45deg); }
-</style>
 
 <!--
 L: "HTTP/1.1 was a single-lane road: one request, one response, wait."
@@ -1724,11 +1636,16 @@ J: "And if the server doesn't support HTTP/3? It falls back to HTTP/2, then HTTP
 layout: center
 ---
 
+
+<div class="relative z-10 flex items-center justify-center h-full">
+
 <div class="quote-slide">
   <div class="quote-text">
     "You'll be fine without it. HTTP/2 is good enough."
   </div>
 <div class="quote-attr">— Unnamed Netty Developer</div>
+</div>
+
 </div>
 
 <!--
@@ -1741,8 +1658,128 @@ J: "Because it's the new HTTP standard and Java keeps pace."
 -->
 
 ---
+layout: section
+---
+
+
+<div class="relative z-10">
+
+# Cryptography
+
+JEP 524/538 <Badge variant="teal">26+27</Badge> · JEP 527 <Badge27/>
+
+</div>
+
+<!--
+J: "While we're in the networking and security space — Java 26 and 27 bring significant cryptography improvements."
+-->
+
+---
+
+# PEM Encodings <Badge variant="blue">2nd Preview (Java 26)</Badge> → <Badge variant="blue">3rd Preview (Java 27)</Badge>
+
+<div class="mt-6 text-lg">
+
+**JEP 524** (Java 26) · **JEP 538** (Java 27)
+
+</div>
+
+<div class="mt-4">
+
+```java
+// Read a PEM-encoded certificate
+PEMDecoder decoder = PEMDecoder.of();
+X509Certificate cert = (X509Certificate)
+    decoder.decode(Files.readString(Path.of("server.pem")));
+
+// Write a key as PEM
+PEMEncoder encoder = PEMEncoder.of();
+String pem = encoder.encodeToString(keyPair.getPrivate());
+```
+
+</div>
+
+<div class="mt-6 text-lg text-gray-300">
+
+PEM is the universal format for certificates and keys — <code>.pem</code>, <code>.crt</code>, <code>.key</code> files everywhere.
+Previously required third-party libraries (BouncyCastle). Now it's in the JDK.
+
+</div>
+
+<!--
+J: "PEM — Privacy Enhanced Mail — is the text format behind every TLS certificate. The files ending in .pem or .crt or .key that you throw at nginx. Previously, reading these in pure Java required BouncyCastle or custom parsing."
+L: "Now it's just in the JDK. JEP 524 in Java 26 as a second preview, JEP 538 in Java 27 as a third preview with API polish."
+J: "Getting there. Should be final soon."
+-->
+
+---
 layout: center
 ---
+
+
+<div class="relative z-10">
+
+<div class="big-statement">
+
+Post-Quantum TLS
+
+</div>
+
+<div class="text-xl text-gray-300 mt-8">
+
+**JEP 527** <Badge27/> — Hybrid key exchange in TLS 1.3<br/>
+Classical (X25519) + Post-Quantum (ML-KEM) in one handshake.<br/><br/>
+You don't change a single line of code.<br/>Java 27 just protects you.
+
+</div>
+
+</div>
+
+<!--
+J: "JEP 527 adds post-quantum hybrid key exchange to TLS 1.3."
+L: "Which means...?"
+J: "Quantum computers — if they ever arrive at scale — could break today's TLS key exchange. Hybrid key exchange combines the classical algorithm with a post-quantum one. If either holds, the connection is safe."
+L: "And we don't need to do anything?"
+J: "Nothing. It's on by default. Java 27 just protects you."
+L: "Boring security."
+J: "The best kind."
+-->
+
+---
+layout: center
+---
+
+
+<div class="relative z-10">
+
+<div class="text-4xl font-bold text-emerald-400 mb-8">+8 more crypto fixes</div>
+
+<div class="text-xl text-gray-300 leading-loose text-left max-w-xl mx-auto">
+
+Eight separate JDK issues improved in Java 27 — key derivation, algorithm providers, cipher edge cases, TLS compression (zlib) support.
+
+<div class="mt-6 text-2xl text-emerald">
+
+Boring maintenance. That matters.
+
+</div>
+
+</div>
+
+</div>
+
+<!--
+J: "And then there are eight more cryptography-related fixes in Java 27 — key derivation improvements, TLS zlib compression support, cipher edge cases."
+L: "Nobody writes a blog post about those."
+J: "And that's exactly why they're important. Unglamorous, critical."
+-->
+
+---
+layout: center
+---
+
+
+<div class="relative z-10">
 
 # A moment of silence please
 <v-click>
@@ -1751,6 +1788,8 @@ layout: center
   <CroppedImage src="./img/java-applet.png"/>
 </div>
 </v-click>
+
+</div>
 
 <!--
 Lutske: We have some sad news for you
@@ -1901,6 +1940,9 @@ L: "All of the 'rich web' technologies from the 90s and 2000s are dead. JavaScri
 layout: center
 ---
 
+
+<div class="relative z-10">
+
 <div class="big-statement">
 
 What applets teach us about Java
@@ -1927,6 +1969,8 @@ This is the pattern. This is how <span class="text-emerald">boring</span> works.
 
 </v-click>
 
+</div>
+
 <!--
 L: "Applet removal shows the boring pattern: signal early, remove slowly, break nothing."
 [click]
@@ -1937,9 +1981,153 @@ L: "Applet removal shows the boring pattern: signal early, remove slowly, break 
 layout: section
 ---
 
+
+<div class="relative z-10">
+
+# Java 27: One more moment of silence
+
+</div>
+
+<!--
+J: "Java 27 had its own removal. A bigger one."
+-->
+
+---
+layout: center
+---
+
+<div class="slide-content flex flex-col items-center justify-center h-full">
+
+<div class="flex flex-col items-center gap-6">
+  <img src="https://mostlynerdless.de/wp-content/uploads/2026/09/ChatGPT-Image-Sep-14-2026-05_19_33-PM.png"
+       class="h-140 object-contain rounded-lg" alt="JVMCI gravestone" />
+</div>
+
+</div>
+
+<!--
+L: "JVMCI — the Java-Level JVM Compiler Interface."
+J: "It was the hook that let GraalVM replace HotSpot's JIT compiler from within the JVM. Oracle's big bet on a next-generation JIT written in Java."
+L: "..."
+J: "Okay, that's enough silence."
+-->
+
+---
+
+# The JVMCI story
+
+<svg viewBox="-25 0 535 300" class="w-full" style="font-size: 1px;">
+  <!-- Axis at y=145, spans x=15..470 -->
+  <line x1="15" y1="145" x2="470" y2="145" stroke="#475569" stroke-width="1.3"/>
+
+  <!-- 2016: Introduced — ABOVE -->
+  <circle cx="60" cy="145" r="6" fill="none" stroke="#8b5cf6" stroke-width="0.8"/>
+  <circle cx="60" cy="145" r="3" fill="#8b5cf6"/>
+  <line x1="60" y1="137" x2="60" y2="100" stroke="#8b5cf6" stroke-width="0.8"/>
+  <circle cx="60" cy="100" r="1.2" fill="#8b5cf6"/>
+  <text x="60" y="160" text-anchor="middle" style="font-size: 14px; font-weight: bold;" fill="#c4b5fd">2016</text>
+  <text x="60" y="92" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">JEP 243: JVMCI</text>
+  <text x="60" y="79" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">GraalVM JIT hook</text>
+  <line x1="18" y1="68" x2="102" y2="68" stroke="#8b5cf6" stroke-width="1.5"/>
+
+  <!-- 2019: GraalVM CE — BELOW -->
+  <circle cx="190" cy="145" r="6" fill="none" stroke="#6366f1" stroke-width="0.8"/>
+  <circle cx="190" cy="145" r="3" fill="#6366f1"/>
+  <line x1="190" y1="153" x2="190" y2="195" stroke="#6366f1" stroke-width="0.8"/>
+  <circle cx="190" cy="195" r="1.2" fill="#6366f1"/>
+  <text x="190" y="132" text-anchor="middle" style="font-size: 14px; font-weight: bold;" fill="#a5b4fc">2019</text>
+  <text x="190" y="208" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">GraalVM CE ships</text>
+  <text x="190" y="220" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">JVMCI at its peak</text>
+  <line x1="142" y1="232" x2="238" y2="232" stroke="#6366f1" stroke-width="1.5"/>
+
+  <!-- 2022: Separation — ABOVE -->
+  <circle cx="330" cy="145" r="6" fill="none" stroke="#f59e0b" stroke-width="0.8"/>
+  <circle cx="330" cy="145" r="3" fill="#f59e0b"/>
+  <line x1="330" y1="137" x2="330" y2="100" stroke="#f59e0b" stroke-width="0.8"/>
+  <circle cx="330" cy="100" r="1.2" fill="#f59e0b"/>
+  <text x="330" y="160" text-anchor="middle" style="font-size: 14px; font-weight: bold;" fill="#fcd34d">2022</text>
+  <text x="330" y="92" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">Oracle separates GraalVM</text>
+  <text x="330" y="79" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">Primary use case gone</text>
+  <line x1="272" y1="68" x2="388" y2="68" stroke="#f59e0b" stroke-width="1.5"/>
+
+  <!-- Java 27: Removed — BELOW -->
+  <circle cx="440" cy="145" r="6" fill="none" stroke="#ef4444" stroke-width="0.8"/>
+  <circle cx="440" cy="145" r="3" fill="#ef4444"/>
+  <line x1="440" y1="153" x2="440" y2="195" stroke="#ef4444" stroke-width="0.8"/>
+  <circle cx="440" cy="195" r="1.2" fill="#ef4444"/>
+  <text x="440" y="132" text-anchor="middle" style="font-size: 14px; font-weight: bold;" fill="#fca5a5">Java 27</text>
+  <text x="440" y="208" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">JVMCI removed</text>
+  <text x="440" y="220" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">252 #if blocks eliminated</text>
+  <line x1="394" y1="232" x2="476" y2="232" stroke="#ef4444" stroke-width="1.5"/>
+</svg>
+
+<div class="mt-2 text-sm text-gray-400">
+
+Affected: GraalJS, JRuby, TornadoVM — TornadoVM has since replaced the underlying technology.
+
+</div>
+
+<!--
+J: "JVMCI was introduced in 2016 via JEP 243 so GraalVM could replace HotSpot's JIT from inside the JVM."
+L: "And it worked?"
+J: "Very well. But in 2022, Oracle separated GraalVM from OpenJDK entirely. JVMCI's primary use case walked out the door with it."
+L: "And left 252 preprocessor conditionals behind."
+J: "Exactly. Java 27 cleans it all up."
+-->
+
+---
+layout: center
+---
+
+<div class="relative z-10">
+
+<div class="big-statement">
+
+What JVMCI teaches us
+
+</div>
+
+<div class="mt-8 text-xl leading-loose">
+
+📢 **Architecture follows strategy** — when the strategy changes, the code changes
+
+⏳ **Maintenance debt accumulates** — 252 conditionals across the JDK
+
+💥 **Removal is a feature** — a cleaner JDK is a faster, safer JDK
+
+</div>
+
+<v-click>
+
+<div class="text-3xl mt-9">
+
+This is how <span class="text-emerald">boring</span> works.
+
+</div>
+
+</v-click>
+
+</div>
+
+<!--
+J: "Same pattern as applets: years of signaling, then removal when the time is right."
+L: "The JDK got smaller and simpler."
+[click]
+J: "Boring works."
+-->
+
+---
+layout: section
+---
+
+
+<div class="relative z-10">
+
 # Preview & Incubating Features
 
 The features that aren't ready yet — and that's okay
+
+</div>
 
 <!--
 L: "Preview and incubating features need --enable-preview. They're not final yet. Some have been in preview for a while — and that's okay. Stability beats rushing."
@@ -1947,7 +2135,7 @@ L: "Preview and incubating features need --enable-preview. They're not final yet
 
 ---
 
-# Primitive types in patterns <Badge variant="blue">4th Preview</Badge>
+# Primitive types in patterns <Badge variant="blue">4th Preview</Badge> <Badge26/> → <Badge variant="blue">5th Preview</Badge> <Badge27/>
 
 <CodeRunner slide-id="primitive-patterns" enable-preview :indent=4>
 
@@ -2039,7 +2227,13 @@ J: "Pattern matching with null reference types can be tricky. Always test your a
 
 ---
 
-# Lazy constants <Badge variant="blue">2nd Preview</Badge>
+# Lazy constants <Badge variant="blue">JEP 526, 2nd Preview</Badge> <Badge26/> → <Badge variant="blue">JEP 531, 3rd Preview</Badge> <Badge27/>
+
+<div class="mt-2 text-sm text-gray-400">
+
+Renamed: <code>StableValue</code> → <code>LazyConstant</code> — *"the latter better captures the primary intended high-level use case, namely that of a single constant value that is initialized lazily."*
+
+</div>
 
 <div class="mt-8">
 
@@ -2114,8 +2308,61 @@ L: "Second preview. Should be final soon."
 -->
 
 ---
+layout: center
+---
 
-# Structured concurrency <Badge variant="blue">6th Preview</Badge>
+
+<div class="relative z-10 flex flex-col items-center justify-center h-full max-w-3xl mx-auto text-center">
+
+<div class="text-2xl text-purple-300 font-semibold mb-6">Why rename StableValue → LazyConstant?</div>
+
+<div class="quote-slide" style="padding: 0;">
+  <div class="quote-text" style="font-size: 1.4rem;">
+    "We renamed the API from StableValue to LazyConstant. The former was appropriate for a low-level API that was close to the underlying JVM mechanism upon which it is implemented; the latter better captures the primary intended high-level use case, namely that of a single constant value that is initialized lazily."
+  </div>
+  <div class="quote-attr">— JEP 531</div>
+</div>
+
+</div>
+
+<!--
+J: "The rename is not cosmetic. 'Stable value' was about the JVM contract — once set, it never changes. 'Lazy constant' is about what you, the developer, actually use it for: a constant that's computed lazily."
+L: "More intention, less implementation detail."
+-->
+
+---
+layout: center
+---
+
+
+<div class="relative z-10 flex flex-col items-center justify-center h-full">
+
+<div class="big-statement">
+Preview features might<br/>change or disappear.
+</div>
+
+<v-click>
+
+<div class="text-3xl mt-8 text-gray-400">
+Remember <span class="text-red-400 font-bold">string templates</span>?
+</div>
+
+</v-click>
+
+</div>
+
+<!--
+L: "Preview features are Java's way of saying: we think this is right, but we're not sure yet."
+J: "String templates were introduced as JEP 430 in Java 21. Iterated in Java 22. Then withdrawn entirely — the design didn't hold up under real-world feedback."
+L: "That's the system working. Preview means: help us find the mistakes before we commit."
+J: "Never ship production code depending on a preview feature. Opt in consciously, and opt out fast when things change."
+-->
+
+---
+
+# Structured concurrency <Badge variant="blue">6th Preview</Badge> <Badge26/> → <Badge variant="blue">7th Preview</Badge> <Badge27/> → <Badge variant="green">Final</Badge> <Badge28/>
+
+<div class="jep-version-label">JEP 525/533 · Graduating to JEP 543 in Java 28</div>
 
 <div class="compact-code grid grid-cols-2 gap-4 mt-6">
 <div>
@@ -2221,11 +2468,13 @@ try (var scope = StructuredTaskScope.open()) {
 
 <!--
 L: "Structured concurrency treats a group of tasks as one unit — if one fails, the rest are cancelled. On the left is the manual executor/shutdown/error handling; on the right the structured version handles cleanup automatically. Same syntax you know: lambdas, try-with-resources, method calls. Just a better library."
+J: "And it's graduating — JEP 543 makes structured concurrency final in Java 28. Seven previews to get the API right."
+L: "That's the boring process doing its job."
 -->
 
 ---
 
-# Vector API <Badge variant="gray">11th Incubator</Badge>
+# Vector API <Badge variant="gray">11th Incubator</Badge> <Badge26/> → <Badge variant="gray">12th Incubator</Badge> <Badge27/>
 
 <div class="mt-8">
 
@@ -2285,11 +2534,16 @@ J: "Exactly. Lucene, AI libraries, anything that crunches numbers. Not your aver
 layout: center
 ---
 
+
+<div class="relative z-10">
+
 <div class="big-statement">
 
   You <RedText>don't</RedText> need these yet.<br/>
 <span class="text-2xl">They're <BlueText>preview</BlueText> for a reason.</span> <br/>
   <span class="text-3xl">But please try them and give feedback. <br/>That's how they graduate.</span>
+
+</div>
 
 </div>
 
@@ -2322,9 +2576,14 @@ L: "Preview features are for experimentation only. They can change or disappear.
 layout: section
 ---
 
+
+<div class="relative z-10">
+
 # Who Is This Really For?
 
 Library developers — and why that matters to you
+
+</div>
 
 <!--
 Johannes:
@@ -2342,6 +2601,9 @@ J: "Because the real audience for these features is library developers."
 layout: center
 ---
 
+
+<div class="relative z-10">
+
 <div class="big-statement">
 
 OpenJDK: Not one company
@@ -2357,6 +2619,8 @@ Many distributions.
 All free. All TCK-tested. All interchangeable.
 
 </v-click>
+
+</div>
 
 </div>
 
@@ -2392,6 +2656,9 @@ Johannes
 layout: center
 ---
 
+
+<div class="relative z-10">
+
 <div class="big-statement">
 
 Your skills don't expire.
@@ -2404,6 +2671,8 @@ A developer who learned Java in 2005 writes modern Java today.
 
 </div>
 
+</div>
+
 <!--
 L: "Here's what the numbers mean personally. If you invested in Java ten years ago, that investment still pays: your patterns, JVM knowledge, and Spring experience all transfer. Markus Westergren migrated the same codebase from Java 1.4 to 7 to 21 over two decades — skills compounding instead of expiring. Compare that to JavaScript framework churn or the Python 2 to 3 break. In Java, your skills compound. They don't expire."
 -->
@@ -2411,6 +2680,9 @@ L: "Here's what the numbers mean personally. If you invested in Java ten years a
 ---
 layout: center
 ---
+
+
+<div class="relative z-10">
 
 <div class="big-statement">
 
@@ -2427,6 +2699,8 @@ It's technical debt with a smiley face.
 </div>
 
 </v-click>
+
+</div>
 
 <!--
 Johannes
@@ -2465,19 +2739,22 @@ add dog burning house meme
 
 ---
 
+
+<div class="relative z-10">
+
 # Honest moment: what Java still lacks
 
-<div class="mt-8 text-xl leading-loose">
+<div class="mt-8 text-3xl leading-loose">
 
-❌ **String interpolation**
+<v-click>❌ String interpolation</v-click><br/>
 
-❌ **Null safety**
+<v-click>❌ Null safety</v-click><br/>
 
-❌ **Simpler concurrency**
+<v-click>❌ Simpler concurrency</v-click><br/>
 
-❌ **Commas after last argument**
+<v-click>❌ Commas after last argument</v-click><br/>
 
-❌ **No JSON built-in**
+<v-click>❌ No JSON built-in</v-click><br/>
 
 </div>
 
@@ -2501,17 +2778,29 @@ It's <span class="text-emerald">boring</span>.
 
 </v-click>
 
+</div>
+
 <!--
 L: "Okay. Honest moment. We've been praising Java for 40 minutes. String interpolation, null-safety, easier concurrency — the gaps are real."
 [click]
 "Java isn't perfect, but the improvement process is sound. The gaps close slowly and predictably."
+
+
+
+
+mention that Java 28 brings JSON builtin preview, null safety potentially partially with Valhalla
+simpler concurrency
 -->
 
 ---
 layout: statement
 ---
 
+<div class="relative z-10 flex items-center justify-center h-full">
+
 # <OrangeText>Can Java be improved?</OrangeText> Yes.
+
+</div>
 
 <!--
 L: "Yes, Java can be improved. That's exactly why the steady release train exists."
@@ -2521,7 +2810,11 @@ L: "Yes, Java can be improved. That's exactly why the steady release train exist
 layout: statement
 ---
 
+<div class="relative z-10 flex items-center justify-center h-full">
+
 # <RedText>Are some existing features not the best?</RedText> Yes.
+
+</div>
 
 <!--
 L:
@@ -2530,9 +2823,13 @@ L:
 ---
 layout: statement
 ---
+
+<div class="relative z-10 flex items-center justify-center h-full">
 
 # <BlueText>Does it miss features other languages have?</BlueText> Yes.
 
+</div>
+
 <!--
 L:
 -->
@@ -2541,8 +2838,12 @@ L:
 layout: statement
 ---
 
+<div class="relative z-10 flex items-center justify-center h-full flex-col">
+
 # <OrangeText>Does it have a huge ecosystem?</OrangeText>
 # <RedText>Does it run almost everywhere? </RedText>Also yes.
+
+</div>
 
 <!--
 Johannes:
@@ -2569,31 +2870,29 @@ layout: center
 layout: center
 ---
 
+<div class="relative z-10">
+
 <div class="big-statement">
 
-Java 26 is <span class="text-emerald">boring</span> —<br/>except for the JVM.
+Java 26 + 27 are <span class="text-emerald">boring</span> —<br/>except under the hood.
 
 </div>
 
 <v-click>
 
-<div class="text-xl text-gray-400 mt-8">
-
-So upgrading might be great,<br/>even if the language didn't change.
-
-</div>
 
 </v-click>
+
+</div>
 
 <!--
 Johannes
 
-J: "Java 26 is borig, except for the JVM, as one of my colleagues want me to say."
+J: "Java 26 and 27 are boring, except under the hood — as one of my colleagues wanted me to say."
 L: "That's the one-line summary of everything we've shown you today."
-J: "The language barely changed. Var, record, switch expressions — still the newest things most people use."
-L: "But the JVM? G1 GC, AOT caching, HTTP/3 in the standard library. The runtime is where the action is."
+J: "The language barely changed. But the JVM? G1 faster and now the universal default, compact object headers on by default, JVMCI gone cleaning up hundreds of conditionals, post-quantum TLS protecting you without any code changes."
 [click]
-J: "So upgrading to Java 26 might be the best thing you do this year — even if you don't write a single line of new syntax."
+J: "So upgrading to Java 27 might be the best thing you do this year — even if you don't write a single line of new syntax."
 L: "Boring language. Brilliant runtime."
 
 
@@ -2604,9 +2903,322 @@ this is a quote of Martin, one of J's colleagues
 layout: section
 ---
 
+<div class="slide-content">
+
+# Java 28 is certainly not boring
+
+March 2027
+
+</div>
+
+<!--
+J: "Before we close — a quick look ahead. Java 28 is coming in March 2027. And this one is different."
+L: "How different?"
+J: "Very. The boring years compounded into something significant."
+-->
+
+---
+
+# Java 28: What's coming
+
+<div class="mt-2 text-sm">
+
+| JEP | Feature | Status |
+|-----|---------|--------|
+| 544 | Ahead-of-Time Code Compilation | <Badge variant="gray">Incubator</Badge> |
+| 401 | Value Objects (Project Valhalla) | <Badge variant="blue">Preview</Badge> |
+| 468 | Derived Record Creation | <Badge variant="blue">Preview</Badge> |
+| 539 | Strict Field Initialization in the JVM | <Badge variant="blue">Preview</Badge> |
+| 540 | Simple JSON API | <Badge variant="gray">Incubator</Badge> |
+| 541 | Deprecate macOS/x64 Port for Removal | <Badge variant="orange">Deprecation</Badge> |
+| 542 | PEM Encodings of Cryptographic Objects | <Badge variant="green">Final</Badge> |
+| 543 | Structured Concurrency | <Badge variant="green">Final</Badge> |
+| 535 | Shenandoah GC: Generational Mode by Default | <Badge variant="green">Final</Badge> |
+| 545 | ZGC: Faster Startup and Warmup | <Badge variant="green">Final</Badge> |
+| 546 | ZGC: Adaptive Heap Sizing | <Badge variant="green">Final</Badge> |
+
+</div>
+
+<!--
+J: "PEM and Structured Concurrency finally graduating to final. Two ZGC improvements. Shenandoah generational as default. But let's look at the two big ones."
+-->
+
+---
+layout: center
+hide: t
+---
+
+<div class="slide-overlay" />
+<div class="slide-content flex flex-col items-center justify-center h-full">
+
+<div class="big-statement">Ahead-of-Time<br/>Code Compilation</div>
+
+<div class="mt-6 text-xl text-gray-300 text-center max-w-2xl">
+
+**JEP 544** <Badge variant="gray">Incubator</Badge> <Badge28/><br/>
+Not just object caching. Not profiles.<br/><em>Compiled native machine code — stored before you run.</em>
+
+</div>
+
+</div>
+
+<!--
+J: "JEP 544 is the next layer in the AOT story. We already have JEP 516 — AOT object caching. JEP 544 goes further: it stores the actual JIT-compiled native code in the AOT cache during a training run. Production runs load finished machine code — no recompilation needed."
+L: "So the warmup phase is gone?"
+J: "That's the goal. Benchmarks show 65–80% faster startup. And by iteration 4, the AOT-cached app is already at steady-state while the JIT-only app is still warming up."
+-->
+
+---
+layout: center
+hide: true
+---
+
+<div class="slide-overlay" />
+<div class="slide-content flex flex-col items-center justify-center h-full">
+
+<div class="big-statement">Ahead-of-Time<br/>Code Compilation</div>
+
+<div class="mt-6 text-xl text-gray-300 text-center max-w-2xl">
+
+**JEP 544** <Badge variant="gray">Incubator</Badge> <Badge28/><br/>
+Not just object caching. Not profiles.<br/><em>Compiled native machine code — stored before you run.</em>
+
+</div>
+
+</div>
+
+<!--
+J: "JEP 544 is the next layer in the AOT story. We already have JEP 516 — AOT object caching. JEP 544 goes further: it stores the actual JIT-compiled native code in the AOT cache during a training run. Production runs load finished machine code — no recompilation needed."
+L: "So the warmup phase is gone?"
+J: "That's the goal. Benchmarks show 65–80% faster startup. And by iteration 4, the AOT-cached app is already at steady-state while the JIT-only app is still warming up."
+-->
+
+---
+layout: center
+---
+
+<img src="/images/wiki-valhalla.jpg" class="slide-bg opacity-100" style="object-position: center 30%;" />
+<div class="slide-overlay" />
+<div class="slide-content flex flex-col items-center justify-center h-full">
+
+<div class="big-statement">Project Valhalla</div>
+
+<div class="mt-6 text-xl text-gray-300 text-center max-w-2xl">
+
+aka **_Value types_**
+
+</div>
+
+</div>
+
+<div class="absolute bottom-4 right-6 text-xs text-slate-500 z-10">
+  <em>Arrival at Valhalla</em> (Tjängvide image stone) · Berig · CC BY-SA 4.0
+</div>
+
+<!--
+J: "Project Valhalla. Started July 2014. 12 years to get the first preview feature out. JEP 401 in Java 28 is the payoff."
+L: "What was taking so long?"
+J: "208,000 lines of code changed to merge JEPs 401 and 539 into mainline. The entire JVM, the verifier, the GC, the compiler — all of it had to understand a new fundamental concept."
+-->
+
+---
+
+# Value Objects: What changes
+
+<div class="grid grid-cols-2 gap-6 mt-3">
+<div>
+
+**`value` modifier — no identity**
+
+```java
+value class Point {
+    final int x, y;
+}
+
+Point a = new Point(1, 2);
+Point b = new Point(1, 2);
+a == b   // true — fields match
+
+// synchronized (a) { }  // error
+```
+
+</div>
+<div>
+
+**Why it matters — memory layout**
+
+`LocalDate[]` of 1M entries today:
+```
+[ptr, ptr, ptr, …]
+  ↓    ↓    ↓
+{header+y+m+d} {header+y+m+d} …
+```
+
+With value objects:
+```
+[y,m,d, y,m,d, y,m,d, …]
+```
+No heap pointers. No GC pressure. Cache-friendly.
+
+<div class="text-xs text-slate-500 mt-2">30 JDK classes become value classes: wrappers, Optional, java.time…</div>
+
+</div>
+</div>
+
+<!--
+J: "Two things change: the syntax and the memory model. The value modifier means: no identity. Two instances with the same fields are the same. No object header, no monitor, no identity hash code."
+L: "And that LocalDate array example — that's the real payoff?"
+J: "That's the one that matters for analytics, finance, scientific computing. A million LocalDates today is a million heap pointers to million heap objects. With value objects it's a flat array. Cache-line friendly. Zero GC."
+-->
+
+---
+
+# What Comes After Value Objects
+
+<div class="mt-4 grid grid-cols-2 gap-8">
+<div>
+
+**JEP 402 — Enhanced Primitive Boxing** <span class="text-xs text-slate-500">Draft · JDK 29+</span>
+
+Primitives as receivers — no more `Integer.MAX_VALUE`:
+
+```java
+int i = 42;
+double d = i.doubleValue();
+Supplier<String> s = i::toString;
+int max = int.MAX_VALUE;
+```
+
+</div>
+<div>
+
+**Null-Restricted Types** <span class="text-xs text-slate-500">Draft · JDK 29–30?</span>
+
+`!` suffix = statically non-nullable:
+
+```java
+Point! p = null;      // compile error
+Point![] pts = new Point![3];
+// pre-filled with zero instance
+```
+
+<div class="text-xs text-slate-500 mt-2">Two draft JEPs · active <code>bworld</code> prototype · syntax unstable</div>
+
+</div>
+</div>
+
+<div class="mt-5 text-sm text-slate-400 text-center">
+
+Also unblocks: **Vector API graduation** (stuck in incubator since JDK 16) · eventual **`List<int>`**
+
+</div>
+
+<!--
+J: "JEP 401 ships in Java 28. But that's not the end. JEP 402 makes primitives usable as receivers — int.MAX_VALUE, i.doubleValue(). Null-restricted types are next: two draft JEPs. The narrower one, 8316779, is value classes only — Point-bang means the JVM can store flat arrays with no null slot, filled by the zero instance. The broader JEP 8303099 extends this to all reference types including String. That one is rated XL effort because it touches generics encoding, signature grammar, overload resolution — the whole type system."
+L: "Is any of this real or just whiteboard?"
+J: "There's an active prototype branch called bworld — bang world. In 2026 they've been annotating existing JDK APIs like Spliterator with bang markers. The design is real, the syntax is unstable, and earliest preview is JDK 29 or 30."
+L: "And the Vector API?"
+J: "It's been in incubation since JDK 16 — nine years. It can't graduate to preview until Valhalla value classes are available. Java 28 unblocks it."
+-->
+
+---
+
+# Project Valhalla: 12 Years in the Making
+
+<svg viewBox="-25 0 610 300" class="w-full" style="font-size: 1px;">
+  <!-- Axis at y=145, spans x=15..545 -->
+  <line x1="15" y1="145" x2="545" y2="145" stroke="#475569" stroke-width="1.3"/>
+
+  <!-- 2014: Project started — ABOVE -->
+  <circle cx="40" cy="145" r="6" fill="none" stroke="#64748b" stroke-width="0.8"/>
+  <circle cx="40" cy="145" r="3" fill="#64748b"/>
+  <line x1="40" y1="137" x2="40" y2="100" stroke="#64748b" stroke-width="0.8"/>
+  <circle cx="40" cy="100" r="1.2" fill="#64748b"/>
+  <text x="40" y="160" text-anchor="middle" style="font-size: 14px; font-weight: bold;" fill="#94a3b8">2014</text>
+  <text x="40" y="92" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">Project started</text>
+  <text x="40" y="79" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">Jul 2014</text>
+  <line x1="0" y1="68" x2="80" y2="68" stroke="#64748b" stroke-width="1.5"/>
+
+  <!-- 2021: Vector API blocked — BELOW -->
+  <circle cx="160" cy="145" r="6" fill="none" stroke="#64748b" stroke-width="0.8"/>
+  <circle cx="160" cy="145" r="3" fill="#64748b"/>
+  <line x1="160" y1="153" x2="160" y2="195" stroke="#64748b" stroke-width="0.8"/>
+  <circle cx="160" cy="195" r="1.2" fill="#64748b"/>
+  <text x="160" y="132" text-anchor="middle" style="font-size: 14px; font-weight: bold;" fill="#94a3b8">2021</text>
+  <text x="160" y="208" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">Vector API incubator</text>
+  <text x="160" y="220" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">waiting on Valhalla…</text>
+  <line x1="112" y1="232" x2="208" y2="232" stroke="#64748b" stroke-width="1.5"/>
+
+  <!-- JDK 26–27: Groundwork — ABOVE -->
+  <circle cx="280" cy="145" r="6" fill="none" stroke="#6366f1" stroke-width="0.8"/>
+  <circle cx="280" cy="145" r="3" fill="#6366f1"/>
+  <line x1="280" y1="137" x2="280" y2="100" stroke="#6366f1" stroke-width="0.8"/>
+  <circle cx="280" cy="100" r="1.2" fill="#6366f1"/>
+  <text x="280" y="160" text-anchor="middle" style="font-size: 14px; font-weight: bold;" fill="#a5b4fc">26–27</text>
+  <text x="280" y="92" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">Primitives in patterns</text>
+  <text x="280" y="79" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">5th preview · JVM groundwork</text>
+  <line x1="218" y1="68" x2="342" y2="68" stroke="#6366f1" stroke-width="1.5"/>
+
+  <!-- JDK 28: Value classes — BELOW -->
+  <circle cx="390" cy="145" r="6" fill="none" stroke="#a5b4fc" stroke-width="0.8"/>
+  <circle cx="390" cy="145" r="3" fill="#a5b4fc"/>
+  <line x1="390" y1="153" x2="390" y2="195" stroke="#a5b4fc" stroke-width="0.8"/>
+  <circle cx="390" cy="195" r="1.2" fill="#a5b4fc"/>
+  <text x="390" y="132" text-anchor="middle" style="font-size: 14px; font-weight: bold;" fill="#c7d2fe">JDK 28</text>
+  <text x="390" y="208" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">JEP 401 + 539 — first preview</text>
+  <text x="390" y="220" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">~208K lines · Mar 2027</text>
+  <line x1="338" y1="232" x2="442" y2="232" stroke="#a5b4fc" stroke-width="1.5"/>
+
+  <!-- JDK 29+: Null-restricted types — ABOVE (dashed = draft) -->
+  <circle cx="510" cy="145" r="6" fill="none" stroke="#7c3aed" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <circle cx="510" cy="145" r="3" fill="#7c3aed" opacity="0.6"/>
+  <line x1="510" y1="137" x2="510" y2="100" stroke="#7c3aed" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <circle cx="510" cy="100" r="1.2" fill="#7c3aed" opacity="0.6"/>
+  <text x="510" y="160" text-anchor="middle" style="font-size: 14px; font-weight: bold;" fill="#a78bfa" opacity="0.8">29+?</text>
+  <text x="510" y="92" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0" opacity="0.75">Point! — null-restricted</text>
+  <text x="510" y="79" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8" opacity="0.75">bworld branch · 2 draft JEPs</text>
+  <line x1="458" y1="68" x2="562" y2="68" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,2"/>
+</svg>
+
+<!--
+J: "This is the roadmap. JDK 28 is the first real payoff — 12 years after the project started. 29 brings primitives-as-objects and non-nullable types. Somewhere after that, List<int>."
+L: "And the Vector API finally graduates?"
+J: "It's been stuck in incubator since JDK 16. JEP 401 unblocks it. Boring compound interest."
+-->
+
+---
+layout: center
+---
+
+<div class="slide-overlay" />
+<div class="slide-content flex flex-col items-center justify-center h-full">
+
+<div class="big-statement">
+
+The <BlueText>boring</BlueText> years<br/>paid for this.
+
+</div>
+
+</div>
+
+<!--
+L: "Java 26 and 27: boring runtime improvements, incremental previews, patient removals."
+J: "All of it compounding. So Java 28 can ship value objects, AOT compilation, a JSON API."
+L: "Trust the process."
+J: "Boring is how you get here."
+-->
+
+---
+layout: section
+---
+
+<div class="slide-content">
+
 # Closing
 
 Boring and brilliant
+
+</div>
 
 <!--
 L: "Let's wrap it up"
@@ -2760,11 +3372,12 @@ These people contributed their boringness
 
 ---
 
+
+<div class="relative z-10 h-full">
+
 # Key takeaways
 
 <div class="flex flex-col justify-center h-full gap-7 px-8">
-
-<v-click>
 
 <div class="text-2xl">
 
@@ -2772,9 +3385,7 @@ These people contributed their boringness
 
 </div>
 
-</v-click>
 
-<v-click>
 
 <div class="text-2xl">
 
@@ -2782,17 +3393,13 @@ These people contributed their boringness
 
 
 </div>
-
-</v-click>
-
-<v-click>
-
 <div class="text-2xl">
 
 🧱 **Boring process. Brilliant results.**<br/>
 </div>
 
-</v-click>
+
+</div>
 
 </div>
 
@@ -2809,6 +3416,9 @@ L: "First: upgrade. You get free performance — G1 GC, HTTP/3, AOT caching — 
 layout: center
 ---
 
+
+<div class="relative z-10">
+
 <div class="big-statement">
 
 <span class="text-emerald">Evolution </span>over <BlueText>revolution</BlueText>
@@ -2821,6 +3431,8 @@ For another 30 years of *boring* Java.
 
 </div>
 
+</div>
+
 <!--
 L: "Evolution over revolution kept Java alive for 30 years. Careful language design and runtime work should keep it relevant for much longer. No rewrites, no breaking changes — just steady, boring, predictable progress."
 
@@ -2830,13 +3442,15 @@ L: "Evolution over revolution kept Java alive for 30 years. Careful language des
 layout: center
 ---
 
+<div class="relative z-10">
+
 # Thank you! 🎉
 
 <div class="grid grid-cols-2 gap-12 mt-12">
 
 <div class="text-center">
 
-### Lutske de Leeuw
+### Lutske van der Meer
 
 <!-- add socials here -->
 github.com/Lutske
@@ -2858,12 +3472,11 @@ mostlynerdless.de
 
 <div class="text-gray-400 ml-50 mt-12 text-lg" style="text-align: center">
 
-![[https://github.com/parttimenerd/java26-is-boring](https://github.com/parttimenerd/java26-is-boring)](./img/repo_qr.png)
+![[https://github.com/parttimenerd/java26-27-are-boring](https://github.com/parttimenerd/java26-27-are-boring)](./img/repo_qr.png)
 
 </div>
-<div class="text-center">
-Don't forget to rate our talk in the app!
 </div>
+
 </div>
 
 <!--
