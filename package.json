@@ -7,7 +7,7 @@
     "generate:sound-manifest": "node scripts/generate-sound-manifest.mjs",
     "dev": "npm run generate:sound-manifest && slidev slides.md --open --port 3032",
     "build": "npm run generate:sound-manifest && slidev build slides.md",
-    "build:gh-pages": "npm run generate:sound-manifest && slidev build slides.md --base /java26-is-boring/",
+    "build:gh-pages": "npm run generate:sound-manifest && slidev build slides.md --base /java26-27-are-boring/",
     "export": "npm run generate:sound-manifest && slidev export slides.md"
   },
   "dependencies": {
