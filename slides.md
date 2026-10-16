@@ -118,7 +118,7 @@ async function refreshBoringSounds() {
       const files = Array.isArray(manifest?.files) ? manifest.files : []
       const resolved = files
         .filter((file) => typeof file === 'string' && file.trim().length > 0)
-        .map((file) => (file.startsWith('/') ? file : `/sounds/${file}`))
+        .map((file) => (file.startsWith('/') ? file : `${base}/sounds/${file}`))
 
       currentBoringSounds = resolved.length > 0 ? [...new Set(resolved)] : [...fallbackBoringSounds]
       boringPlaybackQueue = []
