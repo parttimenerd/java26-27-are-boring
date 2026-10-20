@@ -563,12 +563,11 @@ If you didn't know it, Java had five original design goals, set out in 1995:
 layout: center
 ---
 
-
 <div class="relative z-10">
 
 <div class="big-statement">
 
-How to upgrade to Java 26
+How to upgrade to Java 27
 
 </div>
 
@@ -576,7 +575,7 @@ How to upgrade to Java 26
 
 ```xml
 <!-- Maven: just change this -->
-<maven.compiler.release>26</maven.compiler.release>
+<maven.compiler.release>27</maven.compiler.release>
 ```
 
 </div>
@@ -585,7 +584,7 @@ How to upgrade to Java 26
 
 ```groovy
 // Gradle: just change this
-java { toolchain { languageVersion = JavaLanguageVersion.of(26) } }
+java { toolchain { languageVersion = JavaLanguageVersion.of(27) } }
 ```
 
 </div>
@@ -647,7 +646,6 @@ One could argue most Java releases after Java 8 are boring
 layout: center
 ---
 
-
 <div class="relative z-10">
 
 <div class="big-statement">
@@ -676,17 +674,13 @@ Key message
 - Ecosystem = the real innovator 🚀
 -->
 
+---
 layout: center
 ---
-
-
-<div class="relative z-10">
 
 <div class="big-statement">
 
 Your code was already <span class="text-emerald">boring</span>.
-
-</div>
 
 </div>
 
@@ -711,6 +705,7 @@ And it still compiles on Java 26.
 That’s not a complaint.
 That’s an achievement.
 -->
+
 
 ---
 layout: section
@@ -1164,8 +1159,6 @@ Mark Reinhold captured the goal: stay competitive while protecting compatibility
 | 523 | G1 GC: Now Default on All Systems | <Badge27/> |
 | 534 | Compact Object Headers: Now Default | <Badge27/> |
 | 536 | JFR In-Process Data Redaction | <Badge27/> |
-| 524/538 | PEM Encodings of Cryptographic Objects | <Badge variant="teal">26+27</Badge> |
-| 527 | Post-Quantum Hybrid Key Exchange for TLS 1.3 | <Badge27/> |
 
 </div>
 
@@ -1204,9 +1197,9 @@ We’ll dig into each of these.
 
 | JEP | Feature | Status | Version |
 |-----|---------|--------|---------|
-| 524 | PEM Encodings of Cryptographic Objects | <Badge variant="blue">2nd Preview</Badge> | <Badge26/> |
+| 524 | PEM Encodings of Cryptographic Objects | <Badge variant="blue">2nd Preview</Badge> | <Badge variant="teal">26+27</Badge> |
 | 527 | Post-Quantum Hybrid Key Exchange for TLS 1.3 | <Badge variant="green">Final</Badge> | <Badge27/> |
-| 538 | PEM Encodings of Cryptographic Objects | <Badge variant="blue">3rd Preview</Badge> | <Badge27/> |
+| 538 | PEM Encodings of Cryptographic Objects | <Badge variant="blue">3rd Preview</Badge> | <Badge variant="teal">26+27</Badge> |
 
 </div>
 
@@ -1342,7 +1335,7 @@ layout: center
 more throughput. For free.
 
 
-*According to the JEP 522.*
+<small>*According to the JEP 522.*</small>
 
 
 </div>
@@ -1373,7 +1366,7 @@ Zero lines of code changed. <br/>Just upgrade your JDK.
 
 <div class="text-3xl text-emerald mt-8 text-center">
 
-This is what boring looks like in practice.
+This is what <BlueText>boring</BlueText> looks like in practice.
 
 </div>
 
@@ -1396,7 +1389,7 @@ layout: center
 
 <div class="big-statement">
 
-Java 27: G1 is now the default <br/> <span class="text-3xl">everywhere.</span>
+Java 27: G1 is now the default <br/> <span class="text-7xl text-blue-500">everywhere.</span>
 
 </div>
 
@@ -1423,7 +1416,7 @@ layout: section
 
 <div class="relative z-10">
 
-# Ahead of time
+# Ahead of Time Compilation
 
 JEP 516 <Badge26/>
 
@@ -1677,7 +1670,7 @@ J: "While we're in the networking and security space — Java 26 and 27 bring si
 
 ---
 
-# PEM Encodings <Badge variant="blue">2nd Preview (Java 26)</Badge> → <Badge variant="blue">3rd Preview (Java 27)</Badge>
+# PEM Encodings <Badge variant="blue">2nd Preview (Java 26)</Badge> <Arrow/> <Badge variant="blue">3rd Preview (Java 27)</Badge>
 
 <div class="mt-6 text-lg">
 
@@ -1778,7 +1771,6 @@ J: "And that's exactly why they're important. Unglamorous, critical."
 ---
 layout: center
 ---
-
 
 <div class="relative z-10">
 
@@ -1982,10 +1974,10 @@ L: "Applet removal shows the boring pattern: signal early, remove slowly, break 
 layout: section
 ---
 
-
 <div class="relative z-10">
 
-# Java 27: One more moment of silence
+# Java 27: One more 
+# moment of silence
 
 </div>
 
@@ -2136,7 +2128,7 @@ L: "Preview and incubating features need --enable-preview. They're not final yet
 
 ---
 
-# Primitive types in patterns <Badge variant="blue">4th Preview</Badge> <Badge26/> → <Badge variant="blue">5th Preview</Badge> <Badge27/>
+# Primitive types in patterns <Badge variant="blue">4th Preview</Badge> <Badge26/> <Arrow/> <Badge variant="blue">5th Preview</Badge> <Badge27/>
 
 <CodeRunner slide-id="primitive-patterns" enable-preview :indent=4>
 
@@ -2230,12 +2222,6 @@ J: "Pattern matching with null reference types can be tricky. Always test your a
 
 # Lazy constants <Badge variant="blue">JEP 526, 2nd Preview</Badge> <Badge26/> → <Badge variant="blue">JEP 531, 3rd Preview</Badge> <Badge27/>
 
-<div class="mt-2 text-sm text-gray-400">
-
-Renamed: <code>StableValue</code> → <code>LazyConstant</code> — *"the latter better captures the primary intended high-level use case, namely that of a single constant value that is initialized lazily."*
-
-</div>
-
 <div class="mt-8">
 
 <CodeRunner slide-id="lazy-constant" enable-preview :indent=4>
@@ -2292,7 +2278,7 @@ void main() {
 <div class="mt-4">
 Could you implement it yourself? Yes.
 
-<div class="text-3xl mt-4">
+<div class="text-3xl mt-4 text-green">
 Boring.
 </div>
 </div>
@@ -2311,7 +2297,6 @@ L: "Second preview. Should be final soon."
 ---
 layout: center
 ---
-
 
 <div class="relative z-10 flex flex-col items-center justify-center h-full max-w-3xl mx-auto text-center">
 
@@ -2335,11 +2320,10 @@ L: "More intention, less implementation detail."
 layout: center
 ---
 
-
 <div class="relative z-10 flex flex-col items-center justify-center h-full">
 
 <div class="big-statement">
-Preview features might<br/>change or disappear.
+Preview features might<br/>change or <RedText>disappear</RedText>.
 </div>
 
 <v-click>
@@ -2361,9 +2345,7 @@ J: "Never ship production code depending on a preview feature. Opt in consciousl
 
 ---
 
-# Structured concurrency <Badge variant="blue">6th Preview</Badge> <Badge26/> → <Badge variant="blue">7th Preview</Badge> <Badge27/> → <Badge variant="green">Final</Badge> <Badge28/>
-
-<div class="jep-version-label">JEP 525/533 · Graduating to JEP 543 in Java 28</div>
+# Structured concurrency <Badge variant="blue">6th</Badge> <Badge26/> <Arrow/> <Badge variant="blue">7th</Badge> <Badge27/> <Arrow/> <Badge28/>
 
 <div class="compact-code grid grid-cols-2 gap-4 mt-6">
 <div>
@@ -2475,7 +2457,7 @@ L: "That's the boring process doing its job."
 
 ---
 
-# Vector API <Badge variant="gray">11th Incubator</Badge> <Badge26/> → <Badge variant="gray">12th Incubator</Badge> <Badge27/>
+# Vector API <Badge variant="gray">11th Incubator</Badge> <Badge26/> <Arrow/> <Badge variant="gray">12th Incubator</Badge> <Badge27/>
 
 <div class="mt-8">
 
@@ -2577,10 +2559,10 @@ L: "Preview features are for experimentation only. They can change or disappear.
 layout: section
 ---
 
-
 <div class="relative z-10">
 
-# Who Is This Really For?
+# Who are these features
+#  really for?
 
 Library developers — and why that matters to you
 
@@ -2602,12 +2584,11 @@ J: "Because the real audience for these features is library developers."
 layout: center
 ---
 
-
 <div class="relative z-10">
 
 <div class="big-statement">
 
-OpenJDK: Not one company
+OpenJDK: Not <BlueText>one</BlueText> company
 
 </div>
 
@@ -2657,12 +2638,11 @@ Johannes
 layout: center
 ---
 
-
 <div class="relative z-10">
 
 <div class="big-statement">
 
-Your skills don't expire.
+Your skills don't <RedText>expire</RedText>.
 
 </div>
 
@@ -2740,7 +2720,6 @@ add dog burning house meme
 
 ---
 
-
 <div class="relative z-10">
 
 # Honest moment: what Java still lacks
@@ -2749,13 +2728,13 @@ add dog burning house meme
 
 <v-click>❌ String interpolation</v-click><br/>
 
-<v-click>❌ Null safety</v-click><br/>
+<v-click>❌ Null safety</v-click><v-click><span style="font-size: 0.5em; color: gray;"> maybe with Valhalla</span></v-click><br/>
 
-<v-click>❌ Simpler concurrency</v-click><br/>
+<v-click>❌ Simpler concurrency</v-click><v-click> <span style="font-size: 0.5em; color: gray;">. Structured Concurrency, JDK 28</span></v-click><br/>
 
 <v-click>❌ Commas after last argument</v-click><br/>
 
-<v-click>❌ No JSON built-in</v-click><br/>
+<v-click>❌ No JSON built-in</v-click><v-click><span style="font-size: 0.5em; color: gray;"> Preview coming in JDK 28</span></v-click><br/>
 
 </div>
 
@@ -3139,7 +3118,7 @@ J: "It's been in incubation since JDK 16 — nine years. It can't graduate to pr
   <text x="40" y="92" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">Project started</text>
   <text x="40" y="79" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">Jul 2014</text>
   <line x1="0" y1="68" x2="80" y2="68" stroke="#64748b" stroke-width="1.5"/>
-
+<g v-click>
   <!-- 2021: Vector API blocked — BELOW -->
   <circle cx="160" cy="145" r="6" fill="none" stroke="#64748b" stroke-width="0.8"/>
   <circle cx="160" cy="145" r="3" fill="#64748b"/>
@@ -3149,8 +3128,9 @@ J: "It's been in incubation since JDK 16 — nine years. It can't graduate to pr
   <text x="160" y="208" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">Vector API incubator</text>
   <text x="160" y="220" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">waiting on Valhalla…</text>
   <line x1="112" y1="232" x2="208" y2="232" stroke="#64748b" stroke-width="1.5"/>
-
+</g>
   <!-- JDK 26–27: Groundwork — ABOVE -->
+<g v-click>
   <circle cx="280" cy="145" r="6" fill="none" stroke="#6366f1" stroke-width="0.8"/>
   <circle cx="280" cy="145" r="3" fill="#6366f1"/>
   <line x1="280" y1="137" x2="280" y2="100" stroke="#6366f1" stroke-width="0.8"/>
@@ -3159,8 +3139,9 @@ J: "It's been in incubation since JDK 16 — nine years. It can't graduate to pr
   <text x="280" y="92" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">Primitives in patterns</text>
   <text x="280" y="79" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">5th preview · JVM groundwork</text>
   <line x1="218" y1="68" x2="342" y2="68" stroke="#6366f1" stroke-width="1.5"/>
-
+</g>
   <!-- JDK 28: Value classes — BELOW -->
+<g v-click>
   <circle cx="390" cy="145" r="6" fill="none" stroke="#a5b4fc" stroke-width="0.8"/>
   <circle cx="390" cy="145" r="3" fill="#a5b4fc"/>
   <line x1="390" y1="153" x2="390" y2="195" stroke="#a5b4fc" stroke-width="0.8"/>
@@ -3169,8 +3150,9 @@ J: "It's been in incubation since JDK 16 — nine years. It can't graduate to pr
   <text x="390" y="208" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0">JEP 401 + 539 — first preview</text>
   <text x="390" y="220" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8">~208K lines · Mar 2027</text>
   <line x1="338" y1="232" x2="442" y2="232" stroke="#a5b4fc" stroke-width="1.5"/>
-
+</g>
   <!-- JDK 29+: Null-restricted types — ABOVE (dashed = draft) -->
+<g v-click>
   <circle cx="510" cy="145" r="6" fill="none" stroke="#7c3aed" stroke-width="0.8" stroke-dasharray="3,2"/>
   <circle cx="510" cy="145" r="3" fill="#7c3aed" opacity="0.6"/>
   <line x1="510" y1="137" x2="510" y2="100" stroke="#7c3aed" stroke-width="0.8" stroke-dasharray="3,2"/>
@@ -3179,6 +3161,7 @@ J: "It's been in incubation since JDK 16 — nine years. It can't graduate to pr
   <text x="510" y="92" text-anchor="middle" style="font-size: 10px;" fill="#e2e8f0" opacity="0.75">Point! — null-restricted</text>
   <text x="510" y="79" text-anchor="middle" style="font-size: 9px;" fill="#94a3b8" opacity="0.75">bworld branch · 2 draft JEPs</text>
   <line x1="458" y1="68" x2="562" y2="68" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,2"/>
+</g>
 </svg>
 
 <!--
@@ -3373,16 +3356,15 @@ These people contributed their boringness
 
 ---
 
-
 <div class="relative z-10 h-full">
 
 # Key takeaways
 
-<div class="flex flex-col justify-center h-full gap-7 px-8">
+<div class="flex flex-col justify-center h-full gap-4 px-6" style="margin-top: -2cm">
 
 <div class="text-2xl">
 
-🚀 **Upgrade. Free performance.**<br/>
+🚀 **Upgrade for free performance.**<br/>
 
 </div>
 
