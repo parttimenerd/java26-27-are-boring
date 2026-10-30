@@ -378,7 +378,7 @@ onUnmounted(() => {
 Lutske van der Meer &nbsp;&nbsp;·&nbsp;&nbsp; Johannes Bechberger
 </div>
 
-<div class="mt-4 text-lg text-gray-400">Voxxed Days Amsterdam 2026</div>
+<div class="mt-4 text-lg text-gray-400">J-Fall 2026</div>
 
 </div>
 
@@ -444,6 +444,7 @@ Organizer of Devoxx4kids
 <div class="text-gray-400 mt-4 text-lg">
 
 OpenJDK Developer @ SAP<br/>
+Java Champion<br/>
 Blogger<br/>
 <br/>
 
@@ -598,7 +599,7 @@ That's it. Seriously.
 </div>
 
 <!--
-L: "Upgrading is embarrassingly simple: one property in your pom or toolchain config. Backward compatibility means most apps compile and run without code changes. No rewrite, no migration guide — just bump the number. Boring and brilliant."
+Johannes
 -->
 
 ---
@@ -716,7 +717,7 @@ layout: section
   <div class="text-center pb-12">
     <h1 class="text-white drop-shadow-lg inline-block px-4 py-2 rounded" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);">The Release Train</h1>
   </div>
-  <div class="absolute bottom-4 right-4 text-sm text-black">
+  <div class="absolute bottom-4 right-4 text-sm text-re text-black " style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);">
     Based on <a href="https://www.youtube.com/watch?v=K40XrR67fas" class="text-black">https://www.youtube.com/watch?v=K40XrR67fas
 </a>
   </div>
@@ -1213,7 +1214,6 @@ PEM encodings advancing toward final. Post-quantum TLS shipping in Java 27 by de
 layout: center
 ---
 
-
 <div class="relative z-10">
 
 <div class="big-statement">
@@ -1231,12 +1231,7 @@ JEP 500: Prepare to Make Final Mean Final
 </div>
 
 <!--
-Johannes:
-
-L: "Quick detour: JEP 500 prepares to actually enforce the final keyword."
-J: "Right now, you can technically use reflection to change a final field at runtime."
-L: "Libraries have been doing this for years — Hibernate, serialization frameworks, test utilities."
-J: "In Java 26, the JVM starts warning you. In a future release, it'll be blocked entirely."
+Lutske
 -->
 
 ---
@@ -1289,15 +1284,7 @@ field.set(config, "hacked");  // ← final? What final?
 </v-click>
 
 <!--
-Johannes
-
-J: "Here's what people have been doing. You declare a field final. Someone uses reflection to change it anyway."
-L: "Wait, that actually works?"
-J: "It does. And libraries rely on it — Hibernate for lazy loading, test frameworks for mocking, serialization for deserialization."
-[click]
-J: "Java 26 starts printing warnings. A future release will throw an exception."
-L: "More predictable code, better JIT optimizations, fewer 'how did this field change?!' debugging sessions."
-J: "And existing libraries are already adapting. This is how Java evolves: signal, warn, enforce."
+Lutske
 -->
 
 ---
@@ -1343,13 +1330,7 @@ more throughput. For free.
 </div>
 
 <!--
-L: "JEP 522 reduces the synchronization between your application threads and G1's concurrent refinement threads."
-J: "In English?"
-L: "Your app spends less time waiting for GC bookkeeping. The garbage collector still does the same work, but it gets out of your threads' way faster."
-J: "And the improvement?"
-L: "Five to fifteen percent better throughput, depending on the workload."
-
-J: "The technical detail: G1 maintains a 'card table' that tracks which parts of memory have been modified. Previously, your application threads would occasionally pause to help process that table."
+Lutske
 -->
 
 ---
@@ -1374,11 +1355,6 @@ This is what <BlueText>boring</BlueText> looks like in practice.
 
 <!--
 Lutske
-
-J: "I want to be real for a second. I don't fully understand GC internals. I know roughly what G1 does, but refinement threads? Card tables? That's not my world."
-L: "And it shouldn't be. That's the whole point of boring infrastructure. The GC team does the hard work so you don't have to think about it."
-J: "I upgrade the JDK, my app gets faster, and I go back to writing business logic."
-L: "That's boring working exactly as intended."
 -->
 
 ---
@@ -1403,11 +1379,7 @@ The JDK 26 throughput improvements made that distinction unnecessary.
 </div>
 
 <!--
-J: "Java 27 takes this one step further. JEP 523 makes G1 the default GC on all systems — including single-CPU and low-memory containers."
-L: "Wait, Serial GC was still the default somewhere?"
-J: "Yes — Serial GC runs all GC work on a single thread, so on very constrained systems it had lower overhead. But after the JEP 522 improvements in Java 26, G1 got fast enough that the distinction no longer makes sense."
-L: "So Java 27 just… removes the exception."
-J: "Exactly. One fewer thing to think about."
+Lutske
 -->
 
 ---
@@ -1620,16 +1592,12 @@ System.out.println("Body: " + response.body().substring(0, Math.min(100, respons
 </CodeRunner>
 
 <!--
-J: "Here's what the code looks like. You add one line: .version(HTTP_3). That's it."
-L: "Everything else is the same HttpClient API you already know."
-[click]
-J: "And if the server doesn't support HTTP/3? It falls back to HTTP/2, then HTTP/1.1. Automatically. You literally cannot break anything by enabling it."
+Lutske
 -->
 
 ---
 layout: center
 ---
-
 
 <div class="relative z-10 flex items-center justify-center h-full">
 
@@ -1643,18 +1611,12 @@ layout: center
 </div>
 
 <!--
-Johannes
-
-L: "Honest moment: do you need HTTP/3? For most backend services sitting behind a load balancer?"
-J: "Probably not. HTTP/2 covers the vast majority of use cases."
-L: "So why talk about it?"
-J: "Because it's the new HTTP standard and Java keeps pace."
+Lutske
 -->
 
 ---
 layout: section
 ---
-
 
 <div class="relative z-10">
 
@@ -1665,6 +1627,7 @@ JEP 524/538 <Badge variant="teal">26+27</Badge> · JEP 527 <Badge27/>
 </div>
 
 <!--
+Johannes
 J: "While we're in the networking and security space — Java 26 and 27 bring significant cryptography improvements."
 -->
 
@@ -1701,15 +1664,12 @@ Previously required third-party libraries (BouncyCastle). Now it's in the JDK.
 </div>
 
 <!--
-J: "PEM — Privacy Enhanced Mail — is the text format behind every TLS certificate. The files ending in .pem or .crt or .key that you throw at nginx. Previously, reading these in pure Java required BouncyCastle or custom parsing."
-L: "Now it's just in the JDK. JEP 524 in Java 26 as a second preview, JEP 538 in Java 27 as a third preview with API polish."
-J: "Getting there. Should be final soon."
+Johannes
 -->
 
 ---
 layout: center
 ---
-
 
 <div class="relative z-10">
 
@@ -1730,19 +1690,12 @@ You don't change a single line of code.<br/>Java 27 just protects you.
 </div>
 
 <!--
-J: "JEP 527 adds post-quantum hybrid key exchange to TLS 1.3."
-L: "Which means...?"
-J: "Quantum computers — if they ever arrive at scale — could break today's TLS key exchange. Hybrid key exchange combines the classical algorithm with a post-quantum one. If either holds, the connection is safe."
-L: "And we don't need to do anything?"
-J: "Nothing. It's on by default. Java 27 just protects you."
-L: "Boring security."
-J: "The best kind."
+Johannes
 -->
 
 ---
 layout: center
 ---
-
 
 <div class="relative z-10">
 
@@ -1763,9 +1716,7 @@ Boring maintenance. That matters.
 </div>
 
 <!--
-J: "And then there are eight more cryptography-related fixes in Java 27 — key derivation improvements, TLS zlib compression support, cipher edge cases."
-L: "Nobody writes a blog post about those."
-J: "And that's exactly why they're important. Unglamorous, critical."
+Johannes
 -->
 
 ---
@@ -1785,20 +1736,7 @@ layout: center
 </div>
 
 <!--
-Lutske: We have some sad news for you
-
-
-Side note: it's how I created my first web applications in school.
-
-
-L: "A moment of silence for the Applet API."
-J: "..."
-L: "Okay that's enough silence."
-J: "Java applets were introduced in the very first version of Java in 1995. They were THE way to run interactive content in a browser — before JavaScript was capable of anything serious."
-L: "They could do 3D visualization, chess games, scientific simulations, hardware-accelerated graphics. NASA World Wind was an applet."
-J: "And now, 31 years later, the API is finally gone."
-L: "Deprecated in Java 9 in 2017. Viewer removed in Java 11. And now in Java 26, the entire java.applet package is removed."
-J: "Nine years from deprecation to removal. That's how careful Java is."
+Lutske:
 -->
 
 ---
@@ -1862,18 +1800,9 @@ J: "Nine years from deprecation to removal. That's how careful Java is."
 </svg>
 
 <!--
-Johannes
-
-Lutske: Nooo at the end "Not that I really liked it"
-
-J: "The history of applets is wild. Let me speed-run through it."
-J: "1995. Java 1.0 ships with applets. For the first time, you could run real software in a browser. 3D, games, simulations."
-L: "2013 to 2017. Browsers phase out NPAPI. Chrome, Firefox, Safari — one by one they stopped. By 2017, applets couldn't run in any major browser."
-J: "2017. Java 9 officially deprecates the API. 2026 — Java 26 removes it. Chapter closed."
-L: "31 years from introduction to removal. And the most remarkable thing? Nobody noticed."
+Lutske
 -->
 
----
 ---
 
 # A code tombstone
@@ -1918,21 +1847,12 @@ The `java.applet` package and `JApplet` are now gone. 🪦
 </v-click>
 
 <!--
-L: "For the younger people in the audience: this is what Java applets looked like."
-[show HTML]
-"You'd embed a Java class in an HTML tag. The browser would download and run it. Cross-platform, in 1995!"
-[click - show Java]
-J: "The Java code extended the Applet class. You had lifecycle methods — init, start, paint. The browser managed the whole thing."
-L: "People built chess engines, 3D protein viewers, Mandelbrot set visualizers. This was cutting edge."
-[click]
-J: "The entire java.applet package is gone. JApplet is gone. Flash is gone. ActiveX is gone. Silverlight is gone."
-L: "All of the 'rich web' technologies from the 90s and 2000s are dead. JavaScript won."
+Lutske
 -->
 
 ---
 layout: center
 ---
-
 
 <div class="relative z-10">
 
@@ -1965,9 +1885,7 @@ This is the pattern. This is how <span class="text-emerald">boring</span> works.
 </div>
 
 <!--
-L: "Applet removal shows the boring pattern: signal early, remove slowly, break nothing."
-[click]
-"This is the pattern: signal, warn, remove. Boring, and the reason you can trust upgrades. Compare that to the Python 2 to 3 leap that fractured the ecosystem for a decade."
+Lutske
 -->
 
 ---
@@ -1982,7 +1900,7 @@ layout: section
 </div>
 
 <!--
-J: "Java 27 had its own removal. A bigger one."
+Johannes
 -->
 
 ---
@@ -1999,10 +1917,7 @@ layout: center
 </div>
 
 <!--
-L: "JVMCI — the Java-Level JVM Compiler Interface."
-J: "It was the hook that let GraalVM replace HotSpot's JIT compiler from within the JVM. Oracle's big bet on a next-generation JIT written in Java."
-L: "..."
-J: "Okay, that's enough silence."
+Johannes
 -->
 
 ---
@@ -2061,11 +1976,7 @@ Affected: GraalJS, JRuby, TornadoVM — TornadoVM has since replaced the underly
 </div>
 
 <!--
-J: "JVMCI was introduced in 2016 via JEP 243 so GraalVM could replace HotSpot's JIT from inside the JVM."
-L: "And it worked?"
-J: "Very well. But in 2022, Oracle separated GraalVM from OpenJDK entirely. JVMCI's primary use case walked out the door with it."
-L: "And left 252 preprocessor conditionals behind."
-J: "Exactly. Java 27 cleans it all up."
+Johannes
 -->
 
 ---
@@ -2103,16 +2014,12 @@ This is how <span class="text-emerald">boring</span> works.
 </div>
 
 <!--
-J: "Same pattern as applets: years of signaling, then removal when the time is right."
-L: "The JDK got smaller and simpler."
-[click]
-J: "Boring works."
+Johannes
 -->
 
 ---
 layout: section
 ---
-
 
 <div class="relative z-10">
 
@@ -2123,7 +2030,7 @@ The features that aren't ready yet — and that's okay
 </div>
 
 <!--
-L: "Preview and incubating features need --enable-preview. They're not final yet. Some have been in preview for a while — and that's okay. Stability beats rushing."
+Lutske
 -->
 
 ---
@@ -2169,7 +2076,7 @@ System.out.println(result);
 </CodeRunner>
 
 <!--
-L: "Primitive patterns bring pattern matching to int, long, double and friends. Previously it only worked with reference types; now you can match primitives directly without manual unboxing. It's the fourth preview, so it's getting close to final."
+Lutske
 -->
 
 ---
@@ -2208,14 +2115,7 @@ void main() {
 </div>
 
 <!--
-Johannes:
-
-L: "Here's a mind-bender from Cay Horstmann. What happens when we call value with a null component?"
-J: "The record pattern deconstructs Amount, but the component is null."
-L: "Primitive int pattern? Doesn't match null — primitives can't be null."
-J: "But the second case, Amount(Number _), does match! null is a valid value for the reference type Number."
-L: "So it returns -1. The underscore means we're not binding the value, just checking the type."
-J: "Pattern matching with null reference types can be tricky. Always test your assumptions."
+Lutske
 -->
 
 ---
@@ -2286,12 +2186,6 @@ Boring.
 
 <!--
 Johannes:
-
-L: "Lazy constants let you define values that are only computed when first accessed."
-J: "Think of it as a thread-safe, immutable, lazy singleton — built into the platform."
-L: "Before this, you'd hand-roll double-checked locking or use a holder class pattern."
-J: "Now you just say: compute this when I need it. Done."
-L: "Second preview. Should be final soon."
 -->
 
 ---
@@ -2312,8 +2206,7 @@ layout: center
 </div>
 
 <!--
-J: "The rename is not cosmetic. 'Stable value' was about the JVM contract — once set, it never changes. 'Lazy constant' is about what you, the developer, actually use it for: a constant that's computed lazily."
-L: "More intention, less implementation detail."
+Johannes
 -->
 
 ---
@@ -2337,10 +2230,7 @@ Remember <span class="text-red-400 font-bold">string templates</span>?
 </div>
 
 <!--
-L: "Preview features are Java's way of saying: we think this is right, but we're not sure yet."
-J: "String templates were introduced as JEP 430 in Java 21. Iterated in Java 22. Then withdrawn entirely — the design didn't hold up under real-world feedback."
-L: "That's the system working. Preview means: help us find the mistakes before we commit."
-J: "Never ship production code depending on a preview feature. Opt in consciously, and opt out fast when things change."
+Johannes
 -->
 
 ---
@@ -2450,9 +2340,7 @@ try (var scope = StructuredTaskScope.open()) {
 </div>
 
 <!--
-L: "Structured concurrency treats a group of tasks as one unit — if one fails, the rest are cancelled. On the left is the manual executor/shutdown/error handling; on the right the structured version handles cleanup automatically. Same syntax you know: lambdas, try-with-resources, method calls. Just a better library."
-J: "And it's graduating — JEP 543 makes structured concurrency final in Java 28. Seven previews to get the API right."
-L: "That's the boring process doing its job."
+Lutske
 -->
 
 ---
@@ -2504,19 +2392,12 @@ void main() {
 </div>
 
 <!--
-Johannes
-
-J: "The Vector API lets you write code that explicitly uses SIMD — Single Instruction, Multiple Data. One CPU instruction processes multiple values at once."
-L: "This looks... low-level."
-J: "It is. This is for library authors doing numerical computing, machine learning, search indexing."
-L: "So Lucene."
-J: "Exactly. Lucene, AI libraries, anything that crunches numbers. Not your average CRUD app."
+Lutske
 -->
 
 ---
 layout: center
 ---
-
 
 <div class="relative z-10">
 
@@ -2531,9 +2412,7 @@ layout: center
 </div>
 
 <!--
-L: You don't need these yet, they are preview for a reason
-[click]
-Johannes at the end: As a JDK developer especially the feedback is really important
+Lutske
 -->
 
 ---
@@ -2551,8 +2430,9 @@ java --enable-preview MyApp
 ```
 
 </div>
+
 <!--
-L: "Preview features are for experimentation only. They can change or disappear. Use --enable-preview at compile and runtime, and add the flag to your build tool when you opt in. Share the cautionary tale: a friend shipped string templates early and had to rip them out when they changed."
+Lutske
 -->
 
 ---
@@ -2570,14 +2450,6 @@ Library developers — and why that matters to you
 
 <!--
 Johannes:
-
-L: "Let me be blunt about something."
-J: "These features are not for most of you. And that's okay."
-[pause]
-L: "Vector API. Structured concurrency. The foreign function interface. Panama. Loom."
-J: "These are not features most of you will use directly."
-L: "So why should we care?"
-J: "Because the real audience for these features is library developers."
 -->
 
 ---
@@ -2608,19 +2480,6 @@ All free. All TCK-tested. All interchangeable.
 
 <!--
 Johannes:
-
-J: "This is something most people don't realize about Java."
-[click]
-J: "OpenJDK — the official reference implementation since Java 7 — is built by dozens of organizations. Oracle, Red Hat, IBM, Microsoft, Amazon, Apple, SAP, Azul, BellSoft, JetBrains, Tencent."
-L: "Wait — Microsoft contributes to Java?"
-J: "Microsoft has their own OpenJDK build. So does Amazon. So does SAP — that's where I work on it."
-[click]
-L: "And you can choose any of these distributions. Adoptium, Corretto, Zulu, Liberica, Temurin, SapMachine..."
-[click]
-J: "All free. All pass the Technology Compatibility Kit. All interchangeable. If one vendor does something you don't like — just switch."
-L: "The bus factor for Java isn't one company. It's the entire industry."
-J: "Sun open-sourced the JVM in 2006, the full class library in 2007. Richard Stallman himself said this ended the 'Java trap.' And since then, the ecosystem has only grown."
-L: "Try getting that level of vendor independence with any other platform."
 -->
 
 ---
@@ -2655,13 +2514,12 @@ A developer who learned Java in 2005 writes modern Java today.
 </div>
 
 <!--
-L: "Here's what the numbers mean personally. If you invested in Java ten years ago, that investment still pays: your patterns, JVM knowledge, and Spring experience all transfer. Markus Westergren migrated the same codebase from Java 1.4 to 7 to 21 over two decades — skills compounding instead of expiring. Compare that to JavaScript framework churn or the Python 2 to 3 break. In Java, your skills compound. They don't expire."
+Johannes
 -->
 
 ---
 layout: center
 ---
-
 
 <div class="relative z-10">
 
@@ -2685,16 +2543,6 @@ It's technical debt with a smiley face.
 
 <!--
 Johannes
-
-L: "But let's be honest about the dark side of backward compatibility."
-J: "Some teams use it as an excuse to never upgrade."
-L: "'It works on Java 8' — they say. As if working is an achievement."
-[click]
-J: "'It works on Java 8' is not a strategy. It's technical debt with a smiley face."
-L: "You're missing 8 years of performance improvements. Security patches. Developer experience."
-J: "The platform gives you a safe upgrade path. The question is whether your organization takes it."
-
-mention OpenRewrite
 -->
 
 ---
@@ -2707,15 +2555,7 @@ mention OpenRewrite
 </div>
 
 <!--
-Johannes
-
-J: "Johan Vos nailed it with this comparison."
-L: "The cost of upgrading is small and immediate. One line in your pom, a day of testing."
-J: "The cost of NOT upgrading is huge but invisible — until a CVE hits, or you can't hire, or a library drops support."
-L: "The platform gives you a safe path. Whether your organization takes it..."
-J: "That's a cultural problem. Not a Java problem."
-
-add dog burning house meme
+Lutske
 -->
 
 ---
@@ -2761,13 +2601,7 @@ It's <span class="text-emerald">boring</span>.
 </div>
 
 <!--
-L: "Okay. Honest moment. We've been praising Java for 40 minutes. String interpolation, null-safety, easier concurrency — the gaps are real."
-[click]
-"Java isn't perfect, but the improvement process is sound. The gaps close slowly and predictably."
-
-
-
-
+Lutske
 mention that Java 28 brings JSON builtin preview, null safety potentially partially with Valhalla
 simpler concurrency
 -->
@@ -2783,7 +2617,7 @@ layout: statement
 </div>
 
 <!--
-L: "Yes, Java can be improved. That's exactly why the steady release train exists."
+One yes, one question
 -->
 
 ---
@@ -2844,7 +2678,10 @@ layout: center
 
 <ImageAttribution>https://www.chartoasis.com/downloading-and-installing-java-cop3/</ImageAttribution>
 
-<!-- do you remember the installer from around 2009? -->
+<!--
+Johannes
+do you remember the installer from around 2009?
+-->
 
 ---
 layout: center
@@ -2868,13 +2705,6 @@ Java 26 + 27 are <span class="text-emerald">boring</span> —<br/>except under t
 <!--
 Johannes
 
-J: "Java 26 and 27 are boring, except under the hood — as one of my colleagues wanted me to say."
-L: "That's the one-line summary of everything we've shown you today."
-J: "The language barely changed. But the JVM? G1 faster and now the universal default, compact object headers on by default, JVMCI gone cleaning up hundreds of conditionals, post-quantum TLS protecting you without any code changes."
-[click]
-J: "So upgrading to Java 27 might be the best thing you do this year — even if you don't write a single line of new syntax."
-L: "Boring language. Brilliant runtime."
-
 
 this is a quote of Martin, one of J's colleagues
 -->
@@ -2892,9 +2722,7 @@ March 2027
 </div>
 
 <!--
-J: "Before we close — a quick look ahead. Java 28 is coming in March 2027. And this one is different."
-L: "How different?"
-J: "Very. The boring years compounded into something significant."
+Lutske
 -->
 
 ---
@@ -2920,7 +2748,7 @@ J: "Very. The boring years compounded into something significant."
 </div>
 
 <!--
-J: "PEM and Structured Concurrency finally graduating to final. Two ZGC improvements. Shenandoah generational as default. But let's look at the two big ones."
+Lutske
 -->
 
 ---
@@ -2996,9 +2824,7 @@ aka **_Value types_**
 </div>
 
 <!--
-J: "Project Valhalla. Started July 2014. 12 years to get the first preview feature out. JEP 401 in Java 28 is the payoff."
-L: "What was taking so long?"
-J: "208,000 lines of code changed to merge JEPs 401 and 539 into mainline. The entire JVM, the verifier, the GC, the compiler — all of it had to understand a new fundamental concept."
+Johannes
 -->
 
 ---
@@ -3046,9 +2872,7 @@ No heap pointers. No GC pressure. Cache-friendly.
 </div>
 
 <!--
-J: "Two things change: the syntax and the memory model. The value modifier means: no identity. Two instances with the same fields are the same. No object header, no monitor, no identity hash code."
-L: "And that LocalDate array example — that's the real payoff?"
-J: "That's the one that matters for analytics, finance, scientific computing. A million LocalDates today is a million heap pointers to million heap objects. With value objects it's a flat array. Cache-line friendly. Zero GC."
+Johannes
 -->
 
 ---
@@ -3094,11 +2918,7 @@ Also unblocks: **Vector API graduation** (stuck in incubator since JDK 16) · ev
 </div>
 
 <!--
-J: "JEP 401 ships in Java 28. But that's not the end. JEP 402 makes primitives usable as receivers — int.MAX_VALUE, i.doubleValue(). Null-restricted types are next: two draft JEPs. The narrower one, 8316779, is value classes only — Point-bang means the JVM can store flat arrays with no null slot, filled by the zero instance. The broader JEP 8303099 extends this to all reference types including String. That one is rated XL effort because it touches generics encoding, signature grammar, overload resolution — the whole type system."
-L: "Is any of this real or just whiteboard?"
-J: "There's an active prototype branch called bworld — bang world. In 2026 they've been annotating existing JDK APIs like Spliterator with bang markers. The design is real, the syntax is unstable, and earliest preview is JDK 29 or 30."
-L: "And the Vector API?"
-J: "It's been in incubation since JDK 16 — nine years. It can't graduate to preview until Valhalla value classes are available. Java 28 unblocks it."
+Johannes
 -->
 
 ---
@@ -3165,9 +2985,7 @@ J: "It's been in incubation since JDK 16 — nine years. It can't graduate to pr
 </svg>
 
 <!--
-J: "This is the roadmap. JDK 28 is the first real payoff — 12 years after the project started. 29 brings primitives-as-objects and non-nullable types. Somewhere after that, List<int>."
-L: "And the Vector API finally graduates?"
-J: "It's been stuck in incubator since JDK 16. JEP 401 unblocks it. Boring compound interest."
+Lutske
 -->
 
 ---
@@ -3186,10 +3004,7 @@ The <BlueText>boring</BlueText> years<br/>paid for this.
 </div>
 
 <!--
-L: "Java 26 and 27: boring runtime improvements, incremental previews, patient removals."
-J: "All of it compounding. So Java 28 can ship value objects, AOT compilation, a JSON API."
-L: "Trust the process."
-J: "Boring is how you get here."
+Lutske
 -->
 
 ---
@@ -3205,7 +3020,7 @@ Boring and brilliant
 </div>
 
 <!--
-L: "Let's wrap it up"
+Johannes
 -->
 
 ---
@@ -3351,6 +3166,8 @@ L: "Let's wrap it up"
 </div>
 
 <!--
+Johannes
+
 These people contributed their boringness
 -->
 
@@ -3387,12 +3204,7 @@ These people contributed their boringness
 </div>
 
 <!--
-[click]
-L: "First: upgrade. You get free performance — G1 GC, HTTP/3, AOT caching — just bump the version."
-[click]
-"Second: most new features are for library developers; you benefit when frameworks adopt them."
-[click]
-"Third: the process is the product — predictable releases, safe previews, backward compatibility."
+Lutske
 -->
 
 ---
@@ -3463,11 +3275,5 @@ mostlynerdless.de
 </div>
 
 <!--
-Johannes:
-
-Both: "Thank you! We'll be around for questions."
-L: "Scan the QR code for the slides and to rate the talk."
-J: "And if you want to play more of the Java version quiz — the URL is on my website."
-L: "Now go upgrade your JDK."
-J: "And tell your manager we said so."
+Lutske
 -->
