@@ -13,7 +13,7 @@ Or view them online: https://parttimenerd.github.io/java26-27-are-boring
 
 Speakers
 --------
-- [Lutske van der Meer](httpsgithub.com/Lutske)
+- [Lutske van der Meer](https://github.com/Lutske)
 - [Johannes Bechberger](https://mostlynerdless.de)
 
 Resources

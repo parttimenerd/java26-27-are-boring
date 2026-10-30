@@ -2544,7 +2544,7 @@ Johannes at the end: As a JDK developer especially the feedback is really import
 
 ```shell
 # Compile with preview features enabled
-javac --enable-preview --release 26 MyApp.java
+javac --enable-preview --release 27 MyApp.java
 
 # Run with preview features enabled
 java --enable-preview MyApp
