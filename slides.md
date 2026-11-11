@@ -1851,44 +1851,6 @@ Lutske
 -->
 
 ---
-layout: center
----
-
-<div class="relative z-10">
-
-<div class="big-statement">
-
-What applets teach us about Java
-
-</div>
-
-<div class="mt-8 text-xl leading-loose">
-
-📢 **Signal early** — deprecated in Java 9 (2017)
-
-⏳ **Remove slowly** — 9 years of warnings
-
-💥 **Break nothing** — zero practical impact when finally removed
-
-</div>
-
-<v-click>
-
-<div class="text-3xl mt-9">
-
-This is the pattern. This is how <span class="text-emerald">boring</span> works.
-
-</div>
-
-</v-click>
-
-</div>
-
-<!--
-Lutske
--->
-
----
 layout: section
 ---
 
@@ -2076,7 +2038,15 @@ System.out.println(result);
 </CodeRunner>
 
 <!--
-Lutske
+- Pattern matching keeps getting more powerful in Java.
+- Until now, mainly reference types. Now also primitives!
+- `Object` containing `42`.
+- Switch matches `int`, with `when` guards for positive/negative values.
+- Also supports other primitives, like `long` and `double`.
+- Result: **positive: 42**
+- Introduced in Java 23.
+- Java 26: 4th preview, Java 27: 5th preview.
+- **Even primitives need a few rehearsals before the main stage!** 🎭
 -->
 
 ---
@@ -2108,7 +2078,7 @@ void main() {
 <div class="text-base mt-6 flex gap-6 justify-center flex-wrap font-medium">
 
 <div>A) <code>null</code> </div>
-<div>B) <code>-1</code></div>
+<div>B)  <code>-1</code></div>
 <div>C) <code>-2</code></div>
 <div>D) Exception</div>
 
@@ -2116,6 +2086,56 @@ void main() {
 
 <!--
 Lutske
+
+So it returns -1. The underscore means we're not binding the value, just checking the type.
+Pattern matching with null reference types can be tricky. Always test your assumptions.
+-->
+
+---
+
+# Java Puzzler
+<Caption> by Cay Horstmann</Caption>
+
+
+<CodeRunner enable-preview>
+
+```java {5|6|7||all}
+record Amount(Number n) {}
+
+Integer value(Amount p) {
+    return switch (p) {
+        case Amount(int value) -> value;
+        case Amount(Number _) -> -1;
+        case Amount(Object _) -> -2;
+    };
+}
+
+void main() {
+    System.out.println(value(new Amount(null)));
+}
+```
+
+</CodeRunner>
+
+<div class="text-base mt-6 flex gap-6 justify-center flex-wrap font-medium items-center">
+
+  <div>A) <code>null</code></div>
+  <div class="bg-yellow-400 text-black px-4 py-2 rounded-lg font-bold">
+    B) -1
+  </div>
+  <div>C) <code>-2</code></div>
+  <div>D) Exception</div>
+
+</div>
+
+<!--
+Lutske
+
+- First case: no match because null cannot be unboxed to a primitive int.
+- Second case: Amount(Number _) matches because unnamed patterns can match null.
+- _ means we don't bind the value to a variable.
+- Third case: Amount(Object _) is never reached.
+- The trick: Number _ matches null, but Number n would not.
 -->
 
 ---
@@ -2341,6 +2361,11 @@ try (var scope = StructuredTaskScope.open()) {
 
 <!--
 Lutske
+- Java 8: ExecutorService, manual thread management
+- Problem: Failures, cleanup, orphaned tasks
+
+- Java 26: StructuredTaskScope, fork(), join()
+- Benefit: Grouped tasks, safer lifecycle, easier cleanup
 -->
 
 ---
@@ -2393,6 +2418,12 @@ void main() {
 
 <!--
 Lutske
+
+- **SIMD:** Single Instruction, Multiple Data
+- `SPECIES`: CPU-preferred vector size
+- `fromArray()`: Load chunks of numbers
+- `add()`: Add → `intoArray()`: Store results
+- **LLM embeddings:** Huge arrays of numbers, processed simultaneously instead of one by one
 -->
 
 ---
@@ -2556,6 +2587,10 @@ Johannes
 
 <!--
 Lutske
+- Upgrading: small cost now
+- Not upgrading: potentially huge cost later
+- People wait until something goes wrong
+- **Johan Vos:** Sounds like climate change!
 -->
 
 ---
@@ -2572,7 +2607,6 @@ Lutske
 
 <v-click>❌ Simpler concurrency</v-click><v-click> <span style="font-size: 0.5em; color: gray;">. Structured Concurrency, JDK 28</span></v-click><br/>
 
-<v-click>❌ Commas after last argument</v-click><br/>
 
 <v-click>❌ No JSON built-in</v-click><v-click><span style="font-size: 0.5em; color: gray;"> Preview coming in JDK 28</span></v-click><br/>
 
