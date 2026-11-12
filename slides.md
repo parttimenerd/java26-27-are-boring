@@ -3061,7 +3061,7 @@ Johannes
 
 # Like the awesome voice talent
 
-<div class="grid grid-cols-8 gap-2 mt-4 text-center text-xs">
+<div class="grid grid-cols-8 gap-2 mt-4 text-center text-xs" style="scale: 0.9">
 
 <!-- Original speakers with photos -->
 <div>
