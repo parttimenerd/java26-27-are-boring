@@ -3197,6 +3197,60 @@ Johannes
   <div class="mt-0.5 font-medium text-xs">Victor Rentea</div>
 </div>
 
+<div>
+  <img src="https://avatars.githubusercontent.com/u/186370?v=4"
+       class="w-20 h-20 rounded-full mx-auto object-cover" />
+  <div class="mt-0.5 font-medium text-xs">Bruno Bossola</div>
+</div>
+
+<div>
+  <img src="https://cdn.sessionize.com/image/fc36-400o400o2-p9ZH4aJoZThJC9WSApvxMY.jpg"
+       class="w-20 h-20 rounded-full mx-auto object-cover" />
+  <div class="mt-0.5 font-medium text-xs">Maarten Mulders</div>
+</div>
+
+<div>
+  <img src="https://devoxxian-image-thumbnails.s3-eu-west-1.amazonaws.com/profile-1d970225-bbf3-48a0-b336-b5fe908dad5c.jpg"
+       class="w-20 h-20 rounded-full mx-auto object-cover" />
+  <div class="mt-0.5 font-medium text-xs">Marianna Hoornenborg</div>
+</div>
+
+<div>
+  <img src="https://devoxxian-image-thumbnails.s3-eu-west-1.amazonaws.com/profile-86f92ecc-00ec-4ec4-83d9-ec532303f2e7.jpeg"
+       class="w-20 h-20 rounded-full mx-auto object-cover" />
+  <div class="mt-0.5 font-medium text-xs">Myriam Jessier</div>
+</div>
+
+<div>
+  <img src="https://cdn.sessionize.com/image/0573-400o400o2-0c-aa81-4039-84a0-7196d4bbbb41.d471c733-49ae-4ff4-932a-872c49ac7423.PNG"
+       class="w-20 h-20 rounded-full mx-auto object-cover" />
+  <div class="mt-0.5 font-medium text-xs">Mattias Karlsson</div>
+</div>
+
+<div>
+  <img src="https://cdn.sessionize.com/image/582b-400o400o2-TGXstedKTdvzq8prDVQbRo.jpg"
+       class="w-20 h-20 rounded-full mx-auto object-cover" />
+  <div class="mt-0.5 font-medium text-xs">Laura Kester</div>
+</div>
+
+<div>
+  <img src="https://cdn.sessionize.com/image/d408-200o200o2-LoTfygLebL6ta9KM24hrTF.jpg"
+       class="w-20 h-20 rounded-full mx-auto object-cover" />
+  <div class="mt-0.5 font-medium text-xs">Valeriya Komarnitskaya</div>
+</div>
+
+<div>
+  <img src="https://cdn.sessionize.com/image/0947-200o200o2-913KvgLhGnZPZZJmJRJGW5.jpg"
+       class="w-20 h-20 rounded-full mx-auto object-cover" />
+  <div class="mt-0.5 font-medium text-xs">Marek Dominiak</div>
+</div>
+
+<div>
+  <img src="https://cdn.sessionize.com/image/65ed-200o200o2-PgGRd6Rcx9zmebBV27UqNT.png"
+       class="w-20 h-20 rounded-full mx-auto object-cover" />
+  <div class="mt-0.5 font-medium text-xs">Jos Roseboom</div>
+</div>
+
 </div>
 
 <!--
